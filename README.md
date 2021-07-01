@@ -20,7 +20,7 @@ I worked by myself on this project. I did all the UX/ UI Design. I am using the 
 ```
 AS A KITTY LOVER who frequently wants to save cats
 I WANT an application
-SO THAT I can easily adopt all the kitties in my region or post a kitties up for adoption.
+SO THAT I can easily adopt all the kitties in my region or post kitties up for adoption.
 ```
 
 ## Acceptance Criteria
