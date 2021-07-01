@@ -3,6 +3,16 @@
   "version": "1.0.0",
   "description": "A React JS app for Adopting and posting kitties up for adoption! 😻😺😸😽",
   "main": "server.js",
+  "scripts": {
+   "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+   "start:prod": "node server.js",
+   "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+   "client": "cd client && npm run start",
+   "seed": "node seeds/index.js",
+   "install": "cd client && npm install",
+   "build": "cd client && npm run build",
+   "heroku-postbuild": "npm run build"
+ },
   "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
