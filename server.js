@@ -2,9 +2,12 @@ const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const axios = require('axios');
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const cors = require('cors');
+const routes = require('./controllers');
 const sequelize = require("./config/connection.js");
 const helpers  = require('./utils/helpers.js');
+
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -35,7 +38,6 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.json());
 app.use(cors());
 app.use(routes);
-app.use(errorHandler);
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
