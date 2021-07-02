@@ -33,7 +33,7 @@ const kittyData = [
     {
       userId: 1,
       kittyName: "Wesker",
-      kittyStory: "Wesker secretly wants to kill you at night and steal all your cash. Hide your wife too.",
+      kittyStory: "Wesker secretly wants to kill you at night and steal all your cash. Hide your girlfriend / wife too.",
       kittyPicture: "https://media.rawg.io/media/games/3ea/3ea3c9bbd940b6cb7f2139e42d3d443f.jpg",
       kittyBreed: "Unknown",
       kittyWeight: "Chonky",
