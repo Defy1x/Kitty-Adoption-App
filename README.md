@@ -52,7 +52,7 @@ coming soon
 https://github.com/Defy1x/Kitty-Adoption-App
 
 ## Link to Adobe High Fidelity Wireframes (Desktop)
-coming soon
+https://xd.adobe.com/view/88a878fb-07d2-4bcd-8b87-2634bb5cef18-ddfb/
 
 ## Link to Adobe High Fidelity Wireframes (Mobile)
 coming soon
@@ -62,10 +62,16 @@ https://uxfol.io/project/034c63f3/Kitty-Adoption-React-Application
 
 #Usage
 ## Final screenshot
-![This is the final deployed screenshot of the node project](Assets/queued_cover2.jpg)
-![This is the final deployed screenshot of the node project](Assets/Search.jpg)
-![This is the final deployed screenshot of the node project](Assets/Completed.jpg)
-![This is the final deployed screenshot of the node project](Assets/Game-Details-2.jpg)
+![This is the final deployed screenshot of the react project](assets/screenshot-01.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-02.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-03.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-04.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-05.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-06.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-07.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-08.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-09.png)
+![This is the final deployed screenshot of the react project](assets/screenshot-10.png)
 
 #Credits
 Thank you to everyone in the Columbia Engineering Bootcamp.
