@@ -54,9 +54,6 @@ https://github.com/Defy1x/Kitty-Adoption-App
 ## Link to Adobe High Fidelity Wireframes (Desktop)
 https://xd.adobe.com/view/88a878fb-07d2-4bcd-8b87-2634bb5cef18-ddfb/
 
-## Link to Adobe High Fidelity Wireframes (Mobile)
-coming soon
-
 ## Link to Presentation and Case Study
 https://uxfol.io/project/034c63f3/Kitty-Adoption-React-Application
 
