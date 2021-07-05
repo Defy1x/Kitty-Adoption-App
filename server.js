@@ -22,10 +22,6 @@ const sess = {
     })
 };
 
-const app = express();
-
-app.use(session(sessionOptions));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

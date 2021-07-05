@@ -6,7 +6,7 @@ const homeRoutes = require("./home-routes");
 const kittyRoutes = require("./kitty-routes");
 
 router.use("/", homeRoutes);
-router.use("/kitty", checkAuthorization, libraryRoutes);
+router.use("/kitty", checkAuthorization, kittyRoutes);
 router.use("/api", apiRoutes);
 
 module.exports = router;

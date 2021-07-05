@@ -43,7 +43,7 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
-        const newGame = await Game.create({
+        const newGame = await Kitty.create({
           userId: req.session.user_id,
           gameName: req.body.gameName,
           gameSummary: req.body.gameSummary,
@@ -59,7 +59,7 @@ router.post("/", async (req, res) => {
           gameWebsite: req.body.gameWebsite,
           gameStatus: req.body.gameStatus,
         });
-        res.status(200).json(newGame);
+        res.status(200).json(newKitty);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -68,7 +68,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
     try {
         const updatedKitty = await Kitty.update({
-            gameStatus: req.body.gameStatus,
+            kittyFavorite: req.body.kittyFavorite,
         },
         {
             where: { id: req.params.id }

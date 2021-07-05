@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Game } = require("../models");
+const { User, Kitty } = require("../models");
 const checkAuthorization = require("../utils/authorization");
 
 //searches and returns all games with a status of completed

@@ -10,21 +10,21 @@ router.get("/", checkAuthorization, async (req, res) => {
             include: [
                 {
                     model: User,
-                    as: "game_creator",
+                    as: "kitty_owner",
                     attributes: ["username"]
                 }
             ]
         });
-        const games = gamesData.map((games) => games.get({ plain: true }));
+        const kitty = kittyData.map((kitty) => kitty.get({ plain: true }));
         // console.log("I am here in" + JSON.stringify(games));
         // console.log("Session here" + JSON.stringify(req.session));
         const user = await User.findByPk(req.session.user_id)
         const userObj = user.get({plain: true})
-        const usersDisplay = {game_creator: {username: userObj.username}}
+        const usersDisplay = {kitty_owner: {username: userObj.username}}
 
         res.render("homepage", {
             usersDisplay,
-            games,
+            kitty,
             logged_in: req.session.logged_in, // logged in status from the session object
             userId: req.session.user_id, // user id from the session object
             userName: req.session.username
