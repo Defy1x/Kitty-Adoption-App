@@ -23,6 +23,10 @@ Kitty.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        kittyFavorite: {
+          type: DataTypes.BOOLEAN,
+          allowNull: true,
+        },
           kittyStory: {
           type: DataTypes.TEXT,
           allowNull: true,
