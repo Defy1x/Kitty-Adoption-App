@@ -55,7 +55,7 @@ https://github.com/Defy1x/Kitty-Adoption-App
 https://xd.adobe.com/view/88a878fb-07d2-4bcd-8b87-2634bb5cef18-ddfb/
 
 ## Link to Presentation and Case Study
-https://uxfol.io/project/034c63f3/Kitty-Adoption-React-Application
+https://uxfol.io/project/034c63f3/Zen-Cat-Kitty-Adoption-App-using-React
 
 #Usage
 ## Final screenshot
