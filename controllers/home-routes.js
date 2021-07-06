@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Game } = require("../models");
+const { User, Kitty } = require("../models");
 const checkAuthorization = require("../utils/authorization");
 
 router.get("/", checkAuthorization, async (req, res) => {
