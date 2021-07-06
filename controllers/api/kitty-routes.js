@@ -41,23 +41,23 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
 router.post("/", async (req, res) => {
     try {
-        const newGame = await Kitty.create({
+        const newKitty = await Kitty.create({
           userId: req.session.user_id,
-          gameName: req.body.gameName,
-          gameSummary: req.body.gameSummary,
-          gameArtwork: req.body.gameArtwork,
-          gamePlatform: req.body.gamePlatform,
-          gameGenre: req.body.gameGenre,
-          gameTag: req.body.gameTag,
-          gameESRB: req.body.gameESRB,
-          gameReleased: req.body.gameReleased,
-          gameRating: req.body.gameRating,
-          gamePublisher: req.body.gamePublisher,
-          gameDeveloper: req.body.gameDeveloper,
-          gameWebsite: req.body.gameWebsite,
-          gameStatus: req.body.gameStatus,
+          kittyName: req.body.kittyName,
+          kittyFavorite: req.body.kittyFavorite,
+          kittyStory: req.body.kittyStory,
+          kittyPicture: req.body.kittyPicture,
+          kittyBreed: req.body.kittyBreed,
+          kittyWeight: req.body.kittyWeight,
+          kittyColor: req.body.kittyColor,
+          kittyLocation: req.body.kittyLocation,
+          kittyPersonality: req.body.kittyPersonality,
+          kittyAge: req.body.kittyAge,
+          kittyKids: req.body.kittyKids,
+          kittyPets: req.body.kittyPets,
         });
         res.status(200).json(newKitty);
     } catch (err) {
@@ -73,7 +73,7 @@ router.put("/:id", async (req, res) => {
         {
             where: { id: req.params.id }
         });
-        res.status(200).json(updatedGame);
+        res.status(200).json(updatedKitty);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -85,7 +85,7 @@ router.delete("/:id", async (req, res) => {
         const deletedKitty = await Kitty.destroy({
             where: { id: req.params.id }
         });
-        res.status(200).json(deletedGame);
+        res.status(200).json(deletedKitty);
     } catch (err) {
         res.status(400).json(err);
     }
