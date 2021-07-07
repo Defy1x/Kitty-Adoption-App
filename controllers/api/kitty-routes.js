@@ -20,6 +20,15 @@ router.get("/", async (req, res) => {
     }
 });
 
+// router.put('/:id/favorite' async (req, res) => {
+//   const { id } = req.params; // kitty id
+//   const { userId } = req.session; // logged in user id
+//   // find currently logged in user
+//   const user = await User.findByPk( userId );
+//   // add the kitty
+//   user.addFavoriteKitty( id );
+// })
+
 router.get("/:id", async (req, res) => {
   try {
     const kittyData = await Kitty.findByPk(req.params.id, {

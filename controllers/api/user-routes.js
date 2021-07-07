@@ -4,10 +4,14 @@ const checkAuthorization = require("../../utils/authorization");
 
 router.get("/", async (req, res) => {
     try {
-        const rawUserData = await User.findAll();
+        const rawUserData = await User.findAll({ include: [{
+          model: Kitty,
+          as: 'favoriteKitties'
+        }]});
         const userData = rawUserData.map((user) => user.get({ plain: true }));
         res.status(200).json(userData);
     } catch (err) {
+      console.log(err)
         res.status(500).json(err);
     }
 });
