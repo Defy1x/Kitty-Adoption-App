@@ -26,7 +26,17 @@ function AuthProvider( { value = initialState, ...props } ) {
       }
     }
 
-
+    const signup = async(user) => {
+        try {
+          const {data} = await api.signUpUser(user)
+          dispatch({
+            type: LOGIN,
+            payload: data
+        });
+        }catch(err){
+            console.log("Error with create signup request to API!", err);
+        }
+      }
 
   const logout = () => {
     dispatch( { type: LOGOUT } );
@@ -36,6 +46,7 @@ function AuthProvider( { value = initialState, ...props } ) {
   const providerValue = {
     ...state,
     login,
+    signup,
     logout
   }
 
