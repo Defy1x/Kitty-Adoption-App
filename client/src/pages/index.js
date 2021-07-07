@@ -22,6 +22,11 @@ const Router = () => {
         </Switch>
         : <Switch>
           <Route exact path="/" component={ Home } />
+          <Route exact path="/kittyprofile/:id" component={ KittyProfile } />
+          <Route exact path="/userprofile" component={ UserProfile } />
+          <Route exact path="/postkitty" component={ Post } />
+          <Route exact path="/search" component={ Search } />
+          <Route exact path="/searchresults/:location" component={ SearchResults } />
           <Redirect from="*" to="/" />
         </Switch>
       }
