@@ -7,12 +7,13 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async () => {
-    
-    const response = { id: 1, email, username: 'Cas' };
-    // make our api call ans save the result to response
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    // const response = { id: 1, email, username: 'Cas' };
+    // // make our api call ans save the result to response
 
-    login( response );
+    // login( response );
+    login({email, password})
   }
 
   return (

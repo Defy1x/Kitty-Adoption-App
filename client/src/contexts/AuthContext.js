@@ -1,5 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react";
 import reducer, { LOGIN, LOGOUT } from "../reducers/authReducer";
+import api from "../utils/API";
 
 const AuthContext = createContext();
 const { Provider } = AuthContext;
@@ -13,12 +14,19 @@ function AuthProvider( { value = initialState, ...props } ) {
 
   // these are the functions that child components can use
   // these functions all call dispatch
-  const login = user => {
-    dispatch({
-      type: LOGIN,
-      payload: user
-    });
-  }
+  const login = async(user) => {
+      try {
+        const {data} = await api.loginUser(user)
+        dispatch({
+          type: LOGIN,
+          payload: data
+      });
+      }catch(err){
+          console.log("Error with create login request to API!", err);
+      }
+    }
+
+
 
   const logout = () => {
     dispatch( { type: LOGOUT } );

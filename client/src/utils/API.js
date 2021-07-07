@@ -1,26 +1,33 @@
 import axios from "axios";
 
 export default {
-  getKitties: function() {
-    // return axios.get("http://localhost:8080/api/regions");
+  getKitties: async()=> {
     return axios.get("/api/kitty");
   },
 
-  getKitty: function() {
-    // return axios.get("http://localhost:8080/api/regions");
+  getKitty: async()=>{
     return axios.get("/api/kitty/${kittyId}");
   },
 
-  getUsers: function() {
-    // return axios.get("http://localhost:3001/api/user");
+  getUsers: async()=> {
     return axios.get("/api/user");
   },
 
-  getUser: function() {
-    // return axios.get("http://localhost:8080/api/regions");
+  getUser: async()=> {
     return axios.get("/api/user/${userId}");
   },
 
+  loginUser: async(userData) =>{
+    return axios.post('http://localhost:3001/api/user/login', userData)
+  },
+
+  signUpUser: async(userData)=>{
+    return axios.post('http://localhost:3001/api/user', userData)
+  },
+
+  signOutUser:()=> {
+    return axios.get('http://localhost:3001/api/user/logout')
+  }
 };
 
 // import axios from "axios";
