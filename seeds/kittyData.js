@@ -5,7 +5,6 @@ const kittyData = [
     {
         userId: 1,
         kittyName: "King Henry",
-        kittyFavorite: false,
         kittyStory: "This cat thinks he is a king.",
         kittyPicture: "https://media.rawg.io/media/games/3ea/3ea3c9bbd940b6cb7f2139e42d3d443f.jpg",
         kittyBreed: "Scottish Fold",
@@ -20,7 +19,6 @@ const kittyData = [
     {
         userId: 2,
         kittyName: "Felix",
-        kittyFavorite: false,
         kittyStory: "Felix is a shy guy looking for a new home, he is good with kids and other animals.",
         kittyPicture: "https://media.rawg.io/media/games/3ea/3ea3c9bbd940b6cb7f2139e42d3d443f.jpg",
         kittyBreed: "Short Hair",
@@ -35,7 +33,6 @@ const kittyData = [
     {
         userId: 3,
         kittyName: "Wesker",
-        kittyFavorite: true,
         kittyStory: "Wesker secretly wants to kill you at night and steal all your cash. Hide your girlfriend / wife too.",
         kittyPicture: "https://media.rawg.io/media/games/3ea/3ea3c9bbd940b6cb7f2139e42d3d443f.jpg",
         kittyBreed: "Unknown",
