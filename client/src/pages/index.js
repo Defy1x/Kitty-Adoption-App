@@ -4,7 +4,6 @@ import { useAuthContext } from '../contexts/AuthContext'
 import Home from './Home';
 import Landing from './Landing';
 import SearchResults from './SearchResults';
-import Dashboard from './Dashboard';
 import Login from './Login';
 import Signup from './Signup';
 import Post from './Post';
