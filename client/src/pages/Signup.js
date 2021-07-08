@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SignupForm from '../components/Signup/Signup';
 import { useAuthContext } from '../contexts/AuthContext';
 
 const Signup = () => {
@@ -19,12 +20,13 @@ const Signup = () => {
 
   return (
     <div>
-      <form>
-        <input type="text" value={ username } placeholder="username" onChange={ e => setUsername(e.target.value) } />
-        <input type="text" value={ email } placeholder="email" onChange={ e => setEmail(e.target.value) } />
-        <input type="password" value={ password } placeholder ="password" onChange={ e => setPassword(e.target.value) } />
-        <button onClick={ handleSubmit }>Submit</button>
-      </form>
+      // <form>
+      //   <input type="text" value={ username } placeholder="username" onChange={ e => setUsername(e.target.value) } />
+      //   <input type="text" value={ email } placeholder="email" onChange={ e => setEmail(e.target.value) } />
+      //   <input type="password" value={ password } placeholder ="password" onChange={ e => setPassword(e.target.value) } />
+      //   <button onClick={ handleSubmit }>Submit</button>
+      // </form>
+      <SignupForm/>
     </div>
   );
 };

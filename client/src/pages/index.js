@@ -7,6 +7,11 @@ import SearchResults from './SearchResults';
 import Dashboard from './Dashboard';
 import Login from './Login';
 import Signup from './Signup';
+import Post from './Post';
+import Search from './Search';
+import UserProfile from './UserProfile';
+import KittyProfile from './KittyProfile';
+
 
 const Router = () => {
   const { user } = useAuthContext();
