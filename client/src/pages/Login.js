@@ -23,7 +23,7 @@ const Login = () => {
         <input type="text" value={ email } placeholder="Your email" onChange={ e => setEmail(e.target.value) } />
         <input type="password" value={ password } placeholder="Your Password" onChange={ e => setPassword(e.target.value) } />
         <button onClick={ handleSubmit }>Submit</button>
-      </form>}
+      </form>
       <Signin/>
     </div>
   );
