@@ -17,12 +17,16 @@ export default {
     return axios.get("/api/user/${userId}");
   },
 
+  checkAuth: async() => {
+    return axios.get('/api/user/checkAuth');
+  },
+
   loginUser: async(userData) =>{
-    return axios.post('http://localhost:3001/api/user/login', userData)
+    return axios.post('/api/user/login', userData)
   },
 
   signUpUser: async(userData)=>{
-    return axios.post('http://localhost:3001/api/user', userData)
+    return axios.post('/api/user', userData)
   },
 
   signOutUser:()=> {

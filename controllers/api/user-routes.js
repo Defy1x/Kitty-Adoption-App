@@ -29,6 +29,21 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.get('/checkAuth', async (req, res) => {
+  try {
+    if (req.session.loggedIn) {
+      const user = await User.findByPk( req.session.userId );
+
+      if (user) {
+        const { password, ...userData } = user
+        res.status(200).json(userData);
+      }
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 
 router.post("/", async (req, res) => {
     try {
@@ -39,7 +54,9 @@ router.post("/", async (req, res) => {
         });
         req.session.save(() => {
             req.session.loggedIn = true;
-            res.status(200).json(newUserData);
+
+            const { password, ...userData } = newUserData
+            res.status(200).json(userData);
         });
     } catch (err) {
         res.status(500).json(err);
@@ -69,7 +86,8 @@ router.post("/login", async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
-            res.status(200).json({ user: userData, message: 'You are now logged in!' });
+            const { password, ...user } = userData;
+            res.status(200).json({ user, message: 'You are now logged in!' });
         })
     } catch (err) {
         res.status(500).json(err);

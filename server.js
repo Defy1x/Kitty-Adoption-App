@@ -10,7 +10,7 @@ const helpers  = require('./utils/helpers.js');
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 const sess = {
     secret: process.env.SECRET,

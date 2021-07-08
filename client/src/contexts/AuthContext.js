@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext } from "react";
+import React, { createContext, useReducer, useContext, useEffect } from "react";
 import reducer, { LOGIN, LOGOUT } from "../reducers/authReducer";
 import api from "../utils/API";
 
@@ -41,6 +41,15 @@ function AuthProvider( { value = initialState, ...props } ) {
   const logout = () => {
     dispatch( { type: LOGOUT } );
   }
+
+  useEffect( () => {
+    ( async() => {
+      const user = await api.checkAuth();
+      if (user) {
+        login(user);
+      }
+    } )();
+  }, [] );
 
   // always ...state + all functions
   const providerValue = {
