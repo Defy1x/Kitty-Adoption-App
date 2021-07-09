@@ -9,6 +9,10 @@ export default {
     return axios.get(`/api/kitty/id/${kittyId}`);
   },
 
+  postKitty: async(kittyData)=>{
+    return axios.post('/api/kitty', kittyData);
+  },
+
   getKittiesByLocation: async(location) => {
     return axios.get(`/api/kitty/location/${location}`)
   },

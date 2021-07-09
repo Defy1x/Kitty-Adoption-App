@@ -74,7 +74,6 @@ router.post("/", async (req, res) => {
         const newKitty = await Kitty.create({
           userId: req.session.user_id,
           kittyName: req.body.kittyName,
-          kittyFavorite: req.body.kittyFavorite,
           kittyStory: req.body.kittyStory,
           kittyPicture: req.body.kittyPicture,
           kittyBreed: req.body.kittyBreed,
