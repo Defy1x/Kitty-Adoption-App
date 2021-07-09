@@ -59,7 +59,7 @@ const handleFormSubmit = event => {
  API.postKitty(kittyData)
  .then(response =>{
    console.log(response.data)
-   // history.push("/")
+   history.push("/")
  })
 };
 
