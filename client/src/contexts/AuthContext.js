@@ -15,28 +15,11 @@ function AuthProvider( { value = initialState, ...props } ) {
   // these are the functions that child components can use
   // these functions all call dispatch
   const login = async(user) => {
-      try {
-        const {data} = await api.loginUser(user)
-        dispatch({
-          type: LOGIN,
-          payload: data
-      });
-      }catch(err){
-          console.log("Error with create login request to API!", err);
-      }
-    }
-
-    const signup = async(user) => {
-        try {
-          const {data} = await api.signUpUser(user)
-          dispatch({
-            type: LOGIN,
-            payload: data
-        });
-        }catch(err){
-            console.log("Error with create signup request to API!", err);
-        }
-      }
+    dispatch({
+      type: LOGIN,
+      payload: user
+    });
+  }
 
   const logout = () => {
     dispatch( { type: LOGOUT } );
@@ -44,9 +27,9 @@ function AuthProvider( { value = initialState, ...props } ) {
 
   useEffect( () => {
     ( async() => {
-      const user = await api.checkAuth();
-      if (user) {
-        login(user);
+      const response = await api.checkAuth();
+      if (response.status === 200) {
+        login(response.data);
       }
     } )();
   }, [] );
@@ -55,7 +38,6 @@ function AuthProvider( { value = initialState, ...props } ) {
   const providerValue = {
     ...state,
     login,
-    signup,
     logout
   }
 

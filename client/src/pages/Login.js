@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Signin from '../components/Signin/Signin';
 import { useAuthContext } from '../contexts/AuthContext';
+import api from "../utils/API";
 
 const Login = () => {
   const { login } = useAuthContext();
@@ -12,9 +13,13 @@ const Login = () => {
     e.preventDefault()
     // const response = { id: 1, email, username: 'Cas' };
     // // make our api call ans save the result to response
+    try {
+      const {data} = await api.loginUser({email, password});
 
-    // login( response );
-    login({email, password})
+      login(data)
+    } catch(err){
+        console.log("Error with create login request to API!", err);
+    }
   }
 
   return (

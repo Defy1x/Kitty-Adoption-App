@@ -8,13 +8,39 @@ router.get("/", async (req, res) => {
           model: Kitty,
           as: 'favoriteKitties'
         }]});
-        const userData = rawUserData.map((user) => user.get({ plain: true }));
+        const userData = rawUserData.map((user) => {
+          const { password, ...userData } = user.get({plain: true});
+          return userData;
+        });
         res.status(200).json(userData);
     } catch (err) {
       console.log(err)
         res.status(500).json(err);
     }
 });
+
+router.get('/checkAuth', async (req, res) => {
+  try {
+    if (req.session.logged_in) {
+      console.log( req.session)
+      const user = await User.findByPk( req.session.user_id );
+
+      if (user) {
+        console.log( user );
+
+        const { password, ...userData } = user.get({plain: true});
+        res.status(200).json(userData);
+      }
+
+      console.log( 'no user')
+      res.status(404).send({ message: 'no authenticated user found'});
+    }
+
+    res.status(404).json({ message: 'no authenticated user found'});
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 router.get("/:id", async (req, res) => {
   try {
@@ -23,26 +49,12 @@ router.get("/:id", async (req, res) => {
       res.status(404).json({ message: "No user found with this id!" });
       return;
     }
+    const { password, ...userData } = rawUserData.get({plain: true});
     res.status(200).json(rawUserData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-router.get('/checkAuth', async (req, res) => {
-  try {
-    if (req.session.loggedIn) {
-      const user = await User.findByPk( req.session.userId );
-
-      if (user) {
-        const { password, ...userData } = user
-        res.status(200).json(userData);
-      }
-    }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
 
 
 router.post("/", async (req, res) => {
@@ -53,9 +65,10 @@ router.post("/", async (req, res) => {
             password: req.body.password
         });
         req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.user_id = newUserData.id;
+            req.session.logged_in = true;
 
-            const { password, ...userData } = newUserData
+            const { password, ...userData } = newUserData.get({plain: true});
             res.status(200).json(userData);
         });
     } catch (err) {
@@ -86,7 +99,7 @@ router.post("/login", async (req, res) => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
 
-            const { password, ...user } = userData;
+            const { password, ...user } = userData.get({plain: true});
             res.status(200).json({ user, message: 'You are now logged in!' });
         })
     } catch (err) {

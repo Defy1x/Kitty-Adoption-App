@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import SignupForm from '../components/Signup/Signup';
 import { useAuthContext } from '../contexts/AuthContext';
 
+import api from "../utils/API";
+
 const Signup = () => {
-  const { signup } = useAuthContext();
+  const { login } = useAuthContext();
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -13,9 +15,12 @@ const Signup = () => {
     e.preventDefault()
     // const response = { id: 1, email, username: 'Cas' };
     // // make our api call ans save the result to response
-
-    // login( response );
-    signup({email, password, username})
+    try {
+      const {data} = await api.signUpUser({email, password, username});
+      login(data);
+    }catch(err){
+        console.log("Error with create signup request to API!", err);
+    }
   }
 
   return (

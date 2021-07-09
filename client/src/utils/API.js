@@ -30,6 +30,6 @@ export default {
   },
 
   signOutUser:()=> {
-    return axios.get('http://localhost:3001/api/user/logout')
+    return axios.post('/api/user/logout')
   }
 };
