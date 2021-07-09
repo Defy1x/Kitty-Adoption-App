@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 //   user.addFavoriteKitty( id );
 // })
 
-router.get("/:id", async (req, res) => {
+router.get("/id/:id", async (req, res) => {
   try {
     const kittyData = await Kitty.findByPk(req.params.id, {
       include: [
@@ -49,6 +49,24 @@ router.get("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get("/location/:location", async (req, res) => {
+  try {
+    const location = req.params.location.replace("-", " ")
+    const kittyData = await Kitty.findAll({
+      where: {
+        kittyLocation: location
+      }
+    })
+    if (!kittyData) {
+      res.status(404).json({ message: "No kitty found with this id!" });
+      return;
+    }
+    res.status(200).json(kittyData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+})
 
 
 router.post("/", async (req, res) => {

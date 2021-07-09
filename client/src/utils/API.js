@@ -5,16 +5,20 @@ export default {
     return axios.get("/api/kitty");
   },
 
-  getKitty: async()=>{
-    return axios.get("/api/kitty/${kittyId}");
+  getKitty: async(kittyId)=>{
+    return axios.get(`/api/kitty/id/${kittyId}`);
+  },
+
+  getKittiesByLocation: async(location) => {
+    return axios.get(`/api/kitty/location/${location}`)
   },
 
   getUsers: async()=> {
     return axios.get("/api/user");
   },
 
-  getUser: async()=> {
-    return axios.get("/api/user/${userId}");
+  getUser: async(userId)=> {
+    return axios.get(`/api/user/${userId}`);
   },
 
   checkAuth: async() => {
