@@ -1,4 +1,4 @@
-const { User, Kitty } = require("../../models");
+const { User, Kitty, UserKitty } = require("../../models");
 const router = require("express").Router();
 const checkAuthorization = require("../../utils/authorization");
 
@@ -17,6 +17,16 @@ router.get("/", async (req, res) => {
       console.log(err)
         res.status(500).json(err);
     }
+});
+
+router.post("/favorite", async (req, res) => {
+  try {
+    const favoriteKitty = await UserKitty.create(req.body);
+    res.status(200).json(favoriteKitty);
+  } catch (err) {
+  console.log(err)
+    res.status(500).json(err);
+  }
 });
 
 router.get('/checkAuth', async (req, res) => {
@@ -44,7 +54,10 @@ router.get('/checkAuth', async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const rawUserData = await User.findByPk(req.params.id);
+    const rawUserData = await User.findByPk(req.params.id, { include: [{
+      model: Kitty,
+      as: 'favoriteKitties'
+    }]});
     if (!rawUserData) {
       res.status(404).json({ message: "No user found with this id!" });
       return;

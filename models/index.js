@@ -26,4 +26,4 @@ Kitty.belongsToMany(User, {
     foreignKey: "kittyId"
 });
 
-module.exports = { User, Kitty };
+module.exports = { User, Kitty, UserKitty };
