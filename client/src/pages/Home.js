@@ -6,7 +6,7 @@ import Switch from '@material-ui/core/Switch';
 import API from '../utils/API';
 
 const Home = () => {
-  const { logout, user } = useAuthContext();
+  const { logout, user, login } = useAuthContext();
 
   const [addFavorites, setAddFavorites] = useState(false);
   const [removeFavorites, setRemoveFavorites] = useState(false);
@@ -20,6 +20,19 @@ const Home = () => {
       setResults(response.data)
       console.log(response.data)
     })
+
+    API.getUser()
+    .then(response => {
+      login(response.data)
+    })
+
+    if(addFavorites){
+      setAddFavorites(false);
+    }
+
+    if(removeFavorites){
+      setRemoveFavorites(false);
+    }
   }, [addFavorites, removeFavorites])
 
   const handleLogout = async () => {
