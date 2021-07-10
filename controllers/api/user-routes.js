@@ -33,10 +33,13 @@ router.get('/checkAuth', async (req, res) => {
   try {
     if (req.session.logged_in) {
       console.log( req.session)
-      const user = await User.findByPk( req.session.user_id );
+      const user = await User.findByPk( req.session.user_id, { include: [{
+        model: Kitty,
+        as: 'favoriteKitties'
+      }]} );
 
       if (user) {
-        console.log( user );
+        console.log( user + " Hey this is the user!!!" );
 
         const { password, ...userData } = user.get({plain: true});
         res.status(200).json(userData);
@@ -54,10 +57,20 @@ router.get('/checkAuth', async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const rawUserData = await User.findByPk(req.params.id, { include: [{
-      model: Kitty,
-      as: 'favoriteKitties'
-    }]});
+    const rawUserData = await User.findByPk(req.params.id,
+      {
+          include: [
+            {
+            model: Kitty,
+            as: 'favoriteKitties'
+            },
+            {
+            model: Kitty,
+            as: 'kitty_owner'
+            }
+        ]
+
+        });
     if (!rawUserData) {
       res.status(404).json({ message: "No user found with this id!" });
       return;

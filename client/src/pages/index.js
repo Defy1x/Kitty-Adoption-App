@@ -27,6 +27,7 @@ const Router = () => {
         </Switch>
         : <Switch>
           <Route exact path="/" component={ Home } />
+          // <Route exact path="/" render={(props)=> <Home {...props} user={user}/>} />
           <Route exact path="/kittyprofile/:id" component={ KittyProfile } />
           <Route exact path="/userprofile" component={ UserProfile } />
           <Route exact path="/postkitty" component={ Post } />

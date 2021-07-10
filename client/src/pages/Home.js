@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../contexts/AuthContext';
 import { Link } from "react-router-dom";
+import Switch from '@material-ui/core/Switch';
 import API from '../utils/API';
 
 const Home = () => {
@@ -28,6 +29,10 @@ const Home = () => {
     }
   }
 
+ //  const handleChange = (event) => {
+ //   setState({ ...state, [event.target.name]: event.target.checked });
+ // };
+
   const topThreeCats = results.slice(Math.max(results.length - 3,0))
 
   return(
@@ -42,6 +47,7 @@ const Home = () => {
     <ul className="list-group search-results">
       {topThreeCats.map(result => (
         <li key={result.id} className="list-group-item">
+
           <Link to={`/kittyprofile/${result.id}`}>{result.kittyName}</Link>
           <img alt="kitty" src={result.kittyPicture} className="img-fluid" />
         </li>

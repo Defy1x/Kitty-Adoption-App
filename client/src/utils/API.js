@@ -13,6 +13,10 @@ export default {
     return axios.post('/api/kitty', kittyData);
   },
 
+  deleteKitty: async(kittyId)=>{
+    return axios.delete(`/api/kitty/${kittyId}`);
+  },
+
   getKittiesByLocation: async(location) => {
     return axios.get(`/api/kitty/location/${location}`)
   },
