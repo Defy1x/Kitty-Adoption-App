@@ -4,12 +4,11 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import API from '../../utils/API';
 
-const Heart=({kittyId})=> {
+const Heart=({kittyId, setAddFavorites, setRemoveFavorites})=> {
 
 const { user } = useAuthContext();
 const [favorites, setFavorites] = useState(false);
-const [addFavorites, setAddFavorites] = useState(false);
-const [removeFavorites, setRemoveFavorites] = useState(false);
+
 const [userFavorite, setUserFavorite] = useState({})
 
 useEffect(() => {
@@ -18,7 +17,7 @@ useEffect(() => {
    setFavorites(true);
    setUserFavorite(foundKitty[0])
  }
-}, [addFavorites, removeFavorites])
+}, [])
 
 const toggleFavorite=()=> {
   if (favorites){

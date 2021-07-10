@@ -8,6 +8,8 @@ import API from '../utils/API';
 const Home = () => {
   const { logout, user } = useAuthContext();
 
+  const [addFavorites, setAddFavorites] = useState(false);
+  const [removeFavorites, setRemoveFavorites] = useState(false);
   const [results, setResults] = useState([])
 
   useEffect(() => {
@@ -18,7 +20,7 @@ const Home = () => {
       setResults(response.data)
       console.log(response.data)
     })
-  }, [])
+  }, [addFavorites, removeFavorites])
 
   const handleLogout = async () => {
     try {
@@ -47,7 +49,7 @@ const Home = () => {
 
     <ul className="list-group search-results">
       {topThreeCats.map(cat => (
-      <SingleKitty cat={cat}/>
+      <SingleKitty cat={cat} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
       ))}
     </ul>
   </div>

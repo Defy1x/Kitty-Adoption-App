@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import API from '../utils/API';
+import Heart from '../components/Heart/Heart'
 import { useAuthContext } from '../contexts/AuthContext';
 
 const UserProfile = () => {
   const { logout, user } = useAuthContext();
 
   const [results, setResults] = useState([])
+  const [addFavorites, setAddFavorites] = useState(false);
+  const [removeFavorites, setRemoveFavorites] = useState(false);
 
   useEffect(() => {
     console.log(user)
@@ -32,6 +35,8 @@ const deleteKitty=(kittyId)=>{
   })
 }
 
+
+
   return(
   <div>
     <h1>HELLO this is the User Profile page</h1>
@@ -40,6 +45,7 @@ const deleteKitty=(kittyId)=>{
     <Link to='/postkitty'>Post A Kitty</Link>
     <Link to='/userprofile'>View My Profile</Link>
     <button onClick={ logout }>Logout</button>
+    <h2>My Posted Kitties</h2>
     <ul className="list-group search-results">
       {results.kitty_owner?.map(result => (
         <li key={result.id} className="list-group-item">
@@ -50,7 +56,17 @@ const deleteKitty=(kittyId)=>{
         </li>
       ))}
     </ul>
+    <h2>My Favorite Kitties</h2>
+    <ul className="list-group search-results">
+      {results.favoriteKitties?.map(result => (
+        <li key={result.id} className="list-group-item">
 
+          <Link to={`/kittyprofile/${result.id}`}>{result.kittyName}</Link>
+          <img alt="kitty" src={result.kittyPicture} className="img-fluid" />
+          <Heart kittyId={result.id} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+        </li>
+      ))}
+    </ul>
   </div>
 );
 }
