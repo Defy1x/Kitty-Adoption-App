@@ -21,6 +21,14 @@ export default {
     return axios.get(`/api/kitty/location/${location}`)
   },
 
+  addFavoriteKitty: async(userId, kittyId) =>{
+    return axios.post('api/user/favorite', {userId, kittyId})
+  },
+
+  removeFavoriteKitty: async(id)=>{
+    return axios.delete(`api/user/deleteFav/${id}`);
+  },
+
   getUsers: async()=> {
     return axios.get("/api/user");
   },

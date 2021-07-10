@@ -29,6 +29,17 @@ router.post("/favorite", async (req, res) => {
   }
 });
 
+router.delete("/deleteFav/:id", async (req, res) => {
+    try {
+        const deletedFav = await UserKitty.destroy({
+            where: { id: req.params.id }
+        });
+        res.status(200).json(deletedFav);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 router.get('/checkAuth', async (req, res) => {
   try {
     if (req.session.logged_in) {

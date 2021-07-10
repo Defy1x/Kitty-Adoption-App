@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+import Heart from '../Heart/Heart';
 
-const SingleKitty = (props) => {
+const SingleKitty = ({cat}) => {
   return(
-  <div>
-  <h1>Name: {props.kittyName}</h1>
-  <h2>Age: {props.kittyAge}</h2>
-  </div>
+  <li key={cat.id} className="list-group-item">
+    <Link to={`/kittyprofile/${cat.id}`}>{cat.kittyName}</Link>
+    <img alt="kitty" src={cat.kittyPicture} className="img-fluid" />
+    <Heart kittyId = {cat.id}/>
+  </li>
 );
 }
 

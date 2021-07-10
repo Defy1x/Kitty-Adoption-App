@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../contexts/AuthContext';
 import { Link } from "react-router-dom";
+import SingleKitty from '../components/SingleKitty/SingleKitty';
 import Switch from '@material-ui/core/Switch';
 import API from '../utils/API';
 
 const Home = () => {
-  const { logout } = useAuthContext();
+  const { logout, user } = useAuthContext();
 
   const [results, setResults] = useState([])
 
@@ -45,12 +46,8 @@ const Home = () => {
     <button onClick={ handleLogout }>Logout</button>
 
     <ul className="list-group search-results">
-      {topThreeCats.map(result => (
-        <li key={result.id} className="list-group-item">
-
-          <Link to={`/kittyprofile/${result.id}`}>{result.kittyName}</Link>
-          <img alt="kitty" src={result.kittyPicture} className="img-fluid" />
-        </li>
+      {topThreeCats.map(cat => (
+      <SingleKitty cat={cat}/>
       ))}
     </ul>
   </div>
