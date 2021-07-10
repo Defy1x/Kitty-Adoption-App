@@ -14,6 +14,7 @@ const Home = () => {
     API.getKitties()
     .then(response => {
       setResults(response.data)
+      console.log(response.data)
     })
   }, [])
 

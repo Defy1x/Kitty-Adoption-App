@@ -29,20 +29,6 @@ const history = useHistory()
 const handleFormSubmit = event => {
   event.preventDefault();
 
-  if (kittyPicture.length===0){
-    switch(kittyBreed){
-      case ("Domestic-Short-Hair"):
-      setKittyPicture("/images/shorthair.png");
-      break;
-      case ("Scottish-Fold"):
-      setKittyPicture("/images/tabby.png");
-      break;
-      default:
-      setKittyPicture("/images/defaultcat.png");
-    }
-  }
-  console.log(kittyPicture);
-
   const kittyData={
     kittyName,
     kittyStory,
@@ -62,6 +48,25 @@ const handleFormSubmit = event => {
    history.push("/")
  })
 };
+
+useEffect( () => {
+  if ( kittyBreed ) {
+    setKittyPicture( prev => {
+      if (!prev) {
+        switch(kittyBreed){
+          case "Domestic-Short-Hair":
+            return "/images/shorthair.png";
+          case "Scottish-Fold":
+            return"/images/tabby.png";
+          default:
+            return "/images/defaultcat.png";
+        }
+      }
+
+      return prev;
+    });
+  }
+}, [ kittyBreed ] );
 
 // userId: req.session.user_id,
 // kittyName: req.body.kittyName,
