@@ -16,6 +16,7 @@ export default function KittyForm() {
 const [kittyName, setKittyName] = useState("")
 const [kittyStory, setKittyStory] = useState("")
 const [kittyBreed, setKittyBreed] = useState("")
+const [kittyGender, setKittyGender] = useState("")
 const [kittyWeight, setKittyWeight] = useState("")
 const [kittyColor, setKittyColor] = useState("")
 const [kittyLocation, setKittyLocation] = useState("")
@@ -34,6 +35,7 @@ const handleFormSubmit = event => {
     kittyStory,
     kittyPicture,
     kittyBreed,
+    kittyGender,
     kittyWeight,
     kittyColor,
     kittyLocation,
@@ -68,18 +70,6 @@ useEffect( () => {
   }
 }, [ kittyBreed ] );
 
-// userId: req.session.user_id,
-// kittyName: req.body.kittyName,
-// kittyStory: req.body.kittyStory,
-// kittyPicture: req.body.kittyPicture,
-// kittyBreed: req.body.kittyBreed,
-// kittyWeight: req.body.kittyWeight,
-// kittyColor: req.body.kittyColor,
-// kittyLocation: req.body.kittyLocation,
-// kittyPersonality: req.body.kittyPersonality,
-// kittyAge: req.body.kittyAge,
-// kittyKids: req.body.kittyKids,
-// kittyPets: req.body.kittyPets,
 
   return (
     <React.Fragment>
@@ -88,11 +78,12 @@ useEffect( () => {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
+        <InputLabel>What is your Cat's Name?</InputLabel>
           <TextField
             required
             id="kittyName"
             name="kittyName"
-            label="What is your cat's name?"
+            label=""
             value={kittyName}
             onChange={(e)=>setKittyName(e.target.value)}
             fullWidth
@@ -100,18 +91,25 @@ useEffect( () => {
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="kittyStory"
-            name="kittyStory"
-            label="Describe your cat"
-            value={kittyStory}
-            onChange={(e)=>setKittyStory(e.target.value)}
+          <InputLabel>In what city is your cat located?</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            name="catLocation"
+            label="Where is your cat at?"
+            value={kittyLocation}
+            onChange={(e)=>setKittyLocation(e.target.value)}
             fullWidth
-            autoComplete="kittyDescription"
-          />
+            autoComplete="catLocation"
+          >
+            <MenuItem value={'New-York'}>New York </MenuItem>
+            <MenuItem value={'Los-Angeles'}>Los Angeles</MenuItem>
+            <MenuItem value={'Atlanta'}>Atlanta</MenuItem>
+            <MenuItem value={'Chicago'}>Chicago</MenuItem>
+            <MenuItem value={'San-Francisco'}>San Francisco</MenuItem>
+          </Select>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={6}>
         <InputLabel>What is your Cat's Breed?</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -130,7 +128,23 @@ useEffect( () => {
           <MenuItem value={'Syphnx'}>Syphnx</MenuItem>
         </Select>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={6}>
+          <InputLabel>Is your cat male or female?</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            name="catGender"
+            label="Is your cat male or female??"
+            value={kittyColor}
+            onChange={(e)=>setKittyGender(e.target.value)}
+            fullWidth
+            autoComplete="catGender"
+          >
+            <MenuItem value={'Male'}>Male </MenuItem>
+            <MenuItem value={'Female'}>Female</MenuItem>
+          </Select>
+        </Grid>
+        <Grid item xs={6}>
           <InputLabel>What is your Cat's Weight?</InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -166,25 +180,6 @@ useEffect( () => {
             <MenuItem value={'Calico'}>Calico</MenuItem>
             <MenuItem value={'Orange'}>Orange</MenuItem>
             <MenuItem value={'Grey'}>Grey</MenuItem>
-          </Select>
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <InputLabel>What city is your cat at?</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            name="catLocation"
-            label="Where is your cat at?"
-            value={kittyLocation}
-            onChange={(e)=>setKittyLocation(e.target.value)}
-            fullWidth
-            autoComplete="catLocation"
-          >
-            <MenuItem value={'New-York'}>New York </MenuItem>
-            <MenuItem value={'Los-Angeles'}>Los Angeles</MenuItem>
-            <MenuItem value={'Atlanta'}>Atlanta</MenuItem>
-            <MenuItem value={'Chicago'}>Chicago</MenuItem>
-            <MenuItem value={'San-Francisco'}>San Francisco</MenuItem>
           </Select>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -224,6 +219,18 @@ useEffect( () => {
             <MenuItem value={3}>3</MenuItem>
             <MenuItem value={4}>4+</MenuItem>
           </Select>
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            required
+            id="kittyStory"
+            name="kittyStory"
+            label="Describe your cat"
+            value={kittyStory}
+            onChange={(e)=>setKittyStory(e.target.value)}
+            fullWidth
+            autoComplete="kittyDescription"
+          />
         </Grid>
         <Grid item xs={12}>
           <FormControlLabel

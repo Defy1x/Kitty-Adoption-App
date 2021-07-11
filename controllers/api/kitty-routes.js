@@ -77,6 +77,7 @@ router.post("/", async (req, res) => {
           kittyStory: req.body.kittyStory,
           kittyPicture: req.body.kittyPicture,
           kittyBreed: req.body.kittyBreed,
+          kittyGender: req.body.kittyGender,
           kittyWeight: req.body.kittyWeight,
           kittyColor: req.body.kittyColor,
           kittyLocation: req.body.kittyLocation,

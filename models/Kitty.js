@@ -38,6 +38,11 @@ Kitty.init(
             allowNull: true,
             defaultValue: "N/A"
           },
+          kittyGender: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            defaultValue: "N/A"
+          },
           kittyWeight: {
               type: DataTypes.TEXT,
               allowNull: true,

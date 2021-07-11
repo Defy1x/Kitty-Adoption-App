@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../contexts/AuthContext';
 import { Link } from "react-router-dom";
-import SingleKitty from '../components/SingleKitty/SingleKitty';
+import HomeKitty from '../components/HomeKitty/HomeKitty';
 import Switch from '@material-ui/core/Switch';
 import API from '../utils/API';
 
@@ -62,7 +62,7 @@ const Home = () => {
 
     <ul className="list-group search-results">
       {topThreeCats.map(cat => (
-      <SingleKitty cat={cat} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+      <HomeKitty cat={cat} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
       ))}
     </ul>
   </div>
