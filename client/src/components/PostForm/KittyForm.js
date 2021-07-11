@@ -56,7 +56,7 @@ useEffect( () => {
     setKittyPicture( prev => {
       if (!prev) {
         switch(kittyBreed){
-          case "Domestic-Short-Hair":
+          case "American-Short-Hair":
             return "/images/shorthair.png";
           case "Scottish-Fold":
             return"/images/tabby.png";
@@ -121,11 +121,27 @@ useEffect( () => {
           fullWidth
           autoComplete="catBreed"
         >
-          <MenuItem value={'Domestic-Short-Hair'}>Domestic Short Hair</MenuItem>
-          <MenuItem value={'Scottish-Fold'}>Scottish Fold</MenuItem>
+          <MenuItem value={'Abyssinian'}>Abyssinian</MenuItem>
+          <MenuItem value={'American-Shorthair'}>American Short Hair</MenuItem>
+          <MenuItem value={'American-Curl'}>American Curl</MenuItem>
+          <MenuItem value={'Bengal'}>Bengal</MenuItem>
+          <MenuItem value={'Birman'}>Birman</MenuItem>
+          <MenuItem value={'British-Shorthair'}>British Shorthair</MenuItem>
+          <MenuItem value={'Calico'}>Calico</MenuItem>
+          <MenuItem value={'Devon-Rex'}>Devon Rex</MenuItem>
+          <MenuItem value={'Egyptian-Mau'}>Devon Rex</MenuItem>
+          <MenuItem value={'Exotic-Shorthair'}>Exotic-Shorthairs</MenuItem>
+          <MenuItem value={'Japanese-Bobtail'}>Japanese Bobtail</MenuItem>
           <MenuItem value={'Maine-Coon'}>Maine Coon</MenuItem>
+          <MenuItem value={'Manx'}>Manx</MenuItem>
+          <MenuItem value={'Munchkin'}>Munchkin</MenuItem>
+          <MenuItem value={'Persian'}>Persian</MenuItem>
           <MenuItem value={'Ragdoll'}>Ragdoll</MenuItem>
-          <MenuItem value={'Syphnx'}>Syphnx</MenuItem>
+          <MenuItem value={'Russian-Blue'}>Russian Blue</MenuItem>
+          <MenuItem value={'Scottish-Fold'}>Scottish Fold</MenuItem>
+          <MenuItem value={'Siamese'}>Siamese</MenuItem>
+          <MenuItem value={'Singapura'}>Singapura</MenuItem>
+          <MenuItem value={'Sphynx'}>Sphynx</MenuItem>
         </Select>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -156,10 +172,10 @@ useEffect( () => {
             fullWidth
             autoComplete="catWeight"
           >
-            <MenuItem value={'Underweight'}>Underweight </MenuItem>
+            <MenuItem value={'Underweight'}>Underweight</MenuItem>
             <MenuItem value={'Slim-and-trim'}>Slim & Trim</MenuItem>
             <MenuItem value={'Average'}>Average</MenuItem>
-            <MenuItem value={'A-little-extra'}>More to love</MenuItem>
+            <MenuItem value={'A-little-extra'}>A Little Extra</MenuItem>
             <MenuItem value={'Chonky'}>Chonky</MenuItem>
           </Select>
         </Grid>
@@ -179,7 +195,11 @@ useEffect( () => {
             <MenuItem value={'White'}>White</MenuItem>
             <MenuItem value={'Calico'}>Calico</MenuItem>
             <MenuItem value={'Orange'}>Orange</MenuItem>
-            <MenuItem value={'Grey'}>Grey</MenuItem>
+            <MenuItem value={'Blue'}>Blue</MenuItem>
+            <MenuItem value={'Chocolate'}>Chocolate</MenuItem>
+            <MenuItem value={'Silver'}>Silver</MenuItem>
+            <MenuItem value={'Cream'}>Grey</MenuItem>
+            <MenuItem value={'Lilac'}>Grey</MenuItem>
           </Select>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -199,6 +219,9 @@ useEffect( () => {
             <MenuItem value={'Lazy'}>Lazy</MenuItem>
             <MenuItem value={'Anxious'}>Anxious</MenuItem>
             <MenuItem value={'Chill'}>Chill</MenuItem>
+            <MenuItem value={'Curious'}>Curious</MenuItem>
+            <MenuItem value={'Aggressive'}>Aggressive</MenuItem>
+            <MenuItem value={'Not Sure'}>Not Sure</MenuItem>
           </Select>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -217,7 +240,23 @@ useEffect( () => {
             <MenuItem value={1}>1</MenuItem>
             <MenuItem value={2}>2</MenuItem>
             <MenuItem value={3}>3</MenuItem>
-            <MenuItem value={4}>4+</MenuItem>
+            <MenuItem value={4}>4</MenuItem>
+            <MenuItem value={5}>5</MenuItem>
+            <MenuItem value={6}>6</MenuItem>
+            <MenuItem value={7}>7</MenuItem>
+            <MenuItem value={8}>8</MenuItem>
+            <MenuItem value={9}>9</MenuItem>
+            <MenuItem value={10}>10</MenuItem>
+            <MenuItem value={11}>11</MenuItem>
+            <MenuItem value={12}>12</MenuItem>
+            <MenuItem value={13}>13</MenuItem>
+            <MenuItem value={14}>14</MenuItem>
+            <MenuItem value={15}>15</MenuItem>
+            <MenuItem value={16}>16</MenuItem>
+            <MenuItem value={17}>17</MenuItem>
+            <MenuItem value={18}>18</MenuItem>
+            <MenuItem value={19}>19</MenuItem>
+            <MenuItem value={20}>20</MenuItem>
           </Select>
         </Grid>
         <Grid item xs={12}>
