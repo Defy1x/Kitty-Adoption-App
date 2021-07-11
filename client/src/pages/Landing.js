@@ -14,14 +14,15 @@ import FeaturedPost from '../components/FeaturedPost/FeaturedPost';
 import Main from '../components/Main/Main';
 import Sidebar from '../components/Sidebar/Sidebar';
 import Footer from '../components/Footer/Footer';
+import HomeLogo from '../components/Logo/HomeLogo/HomeLogo';
+import LandingImage from '../components/LandingImage/LandingImage';
+import GetStarted from '../components/GetStarted/GetStarted';
 import post1 from '../components/Blog/blog-post.1.md';
 import post2 from '../components/Blog/blog-post.2.md';
 import post3 from '../components/Blog/blog-post.3.md';
 
 const Landing = () => {
   const { login } = useAuthContext();
-
-
 
 const sections = [
   { title: 'Technology', url: '#' },
@@ -94,29 +95,25 @@ const sidebar = {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
-        <h1>HELLO this is the Landing page</h1>
-        <Link to='/login'>Login</Link>
-        <Link to='/signup'>Signup</Link>
         <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
+        <HomeLogo/>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+          <LandingImage/>
+        </Grid>
+          <Grid item xs={12} sm={6}>
+            <h1 className="LandingTitle">Find Your Furever Home With Us</h1>
+            <p className="LandingText">Adopt a cat close to you or post a furry friend for someone else to love. We work with local shelters to help you find the perfect kitty. </p>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={8}>
+              <Link to='/signup'><GetStarted/></Link>
+              <Link to='/login'><p className="LandingLink">Already have an account? Sign in.</p></Link>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid container spacing={5}>
-            <Main title="From the firehose" posts={posts} />
-            <Sidebar
-              title={sidebar.title}
-              description={sidebar.description}
-              archives={sidebar.archives}
-              social={sidebar.social}
-            />
-          </Grid>
+        </Grid>
         </main>
       </Container>
-      <Footer title="Footer" description="Something here to give the footer a purpose!" />
     </React.Fragment>
   );
 }

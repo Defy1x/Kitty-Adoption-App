@@ -22,6 +22,7 @@ UserKitty.init(
         kittyId: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 0,
             references: {
                 model: "kitty",
                 key: "id"
