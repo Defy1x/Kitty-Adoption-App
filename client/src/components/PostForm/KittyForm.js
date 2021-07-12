@@ -56,8 +56,20 @@ useEffect( () => {
     setKittyPicture( prev => {
       if (!prev) {
         switch(kittyBreed){
+          case "Abyssinian":
+            return "/images/shorthair.png";
           case "American-Short-Hair":
             return "/images/shorthair.png";
+            case "American-Curl":
+              return "/images/shorthair.png";
+            case "Bengal":
+              return "/images/shorthair.png";
+            case "Birman":
+              return "/images/shorthair.png";
+            case "British-Shorthair":
+              return "/images/shorthair.png";
+            case "Calico":
+              return "/images/shorthair.png";
           case "Scottish-Fold":
             return"/images/tabby.png";
           default:
