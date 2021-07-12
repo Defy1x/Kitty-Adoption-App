@@ -70,10 +70,34 @@ useEffect( () => {
               return "/images/shorthair.png";
             case "Calico":
               return "/images/shorthair.png";
-              case "Devon-Rex":
-                return "/images/shorthair.png";
-          case "Scottish-Fold":
+            case "Devon-Rex":
+             return "/images/shorthair.png";
+            case "Egyptian-Mau":
+             return "/images/shorthair.png";
+            case "Exotic-Shorthair":
+            return "/images/shorthair.png";
+            case "Japanese-Bobtail":
+            return "/images/shorthair.png";
+            case "Maine-Coon":
+            return "/images/shorthair.png";
+            case "Manx":
+            return "/images/shorthair.png";
+            case "Munchkin":
+            return "/images/shorthair.png";
+            case "Persian":
+            return "/images/shorthair.png"
+            case "Ragdoll":
+            return "/images/shorthair.png";;
+            case "Russian-Blue":
+            return "/images/shorthair.png";
+            case "Scottish-Fold":
             return"/images/tabby.png";
+            case "Siamese":
+            return "/images/shorthair.png";
+            case "Singapura":
+            return "/images/shorthair.png";
+            case "Sphynx":
+            return "/images/shorthair.png";
           default:
             return "/images/defaultcat.png";
         }
