@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useAuthContext } from '../contexts/AuthContext';
 import { Link } from "react-router-dom";
 import HomeKitty from '../components/HomeKitty/HomeKitty';
-import Switch from '@material-ui/core/Switch';
 import API from '../utils/API';
 
 const Home = () => {
