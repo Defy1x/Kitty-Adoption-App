@@ -57,37 +57,37 @@ useEffect( () => {
       if (!prev) {
         switch(kittyBreed){
           case "Abyssinian":
-            return "/images/shorthair.png";
+            return "/images/abyssinian.svg";
           case "American-Short-Hair":
-            return "/images/shorthair.png";
+            return "/images/american-shorthair.svg";
             case "American-Curl":
-              return "/images/shorthair.png";
+              return "/images/american-curl.svg";
             case "Bengal":
               return "/images/shorthair.png";
             case "Birman":
               return "/images/shorthair.png";
             case "British-Shorthair":
-              return "/images/shorthair.png";
+              return "/images/british-shorthair.svg";
             case "Calico":
               return "/images/shorthair.png";
             case "Devon-Rex":
-             return "/images/shorthair.png";
+             return "/images/devon-rex.svg";
             case "Egyptian-Mau":
              return "/images/shorthair.png";
             case "Exotic-Shorthair":
-            return "/images/shorthair.png";
+            return "/images/exotic-shorthair.svg";
             case "Japanese-Bobtail":
-            return "/images/shorthair.png";
+            return "/images/japanese-bobtail.svg";
             case "Maine-Coon":
-            return "/images/shorthair.png";
+            return "/images/maine-coon.svg";
             case "Manx":
-            return "/images/shorthair.png";
+            return "/images/manx.svg";
             case "Munchkin":
-            return "/images/shorthair.png";
+            return "/images/munchkin.svg";
             case "Persian":
             return "/images/shorthair.png"
             case "Ragdoll":
-            return "/images/shorthair.png";;
+            return "/images/ragdoll.svg";;
             case "Russian-Blue":
             return "/images/shorthair.png";
             case "Scottish-Fold":
@@ -97,7 +97,9 @@ useEffect( () => {
             case "Singapura":
             return "/images/shorthair.png";
             case "Sphynx":
-            return "/images/shorthair.png";
+            return "/images/sphynx.svg";
+            case "Other":
+            return "/images/american-shorthair.svg";
           default:
             return "/images/defaultcat.png";
         }
@@ -180,6 +182,7 @@ useEffect( () => {
           <MenuItem value={'Siamese'}>Siamese</MenuItem>
           <MenuItem value={'Singapura'}>Singapura</MenuItem>
           <MenuItem value={'Sphynx'}>Sphynx</MenuItem>
+          <MenuItem value={'Other'}>Other / Unknown</MenuItem>
         </Select>
         </Grid>
         <Grid item xs={12} sm={6}>
