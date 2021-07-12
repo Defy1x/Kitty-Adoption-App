@@ -31,6 +31,14 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #C35243;
   font-size: 2.5em;
   padding-top: 10%;
+
+}
+
+.SearchTitle{
+  color: #C35243;
+  font-size: 2.5em;
+  padding-top: 20%;
+  padding-bottom: 10px;
 }
 
 .LandingText{

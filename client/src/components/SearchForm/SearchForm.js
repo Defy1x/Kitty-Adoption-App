@@ -32,7 +32,7 @@ function SearchForm(props) {
         color="primary"
         onClick={props.handleFormSubmit}
       >
-        Let's Go!
+        Okay, Let's Go!
       </Button>
     </FormControl>
   );
