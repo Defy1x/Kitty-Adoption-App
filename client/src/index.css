@@ -57,6 +57,29 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
   color: #C35243;
 }
 
+.list-group-item {
+  border: none !important;
+}
+
+.list-group{
+  flex-direction: row !important;
+}
+
+.homeFlexContainer{
+  padding-top: 10px;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.HomeTitle{
+  color: #4A503D;
+  text-align: center;
+}
+
+img{
+  vertical-align: top !important;
+}
+
 a {
   text-decoration-color: #4A503D !important;
 }

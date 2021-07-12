@@ -3,6 +3,12 @@ import { useAuthContext } from '../contexts/AuthContext';
 import { Link } from "react-router-dom";
 import HomeKitty from '../components/HomeKitty/HomeKitty';
 import API from '../utils/API';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import Main from '../components/Main/Main';
+import HomeLogo from '../components/Logo/HomeLogo/HomeLogo';
+
 
 const Home = () => {
   const { logout, user, login } = useAuthContext();
@@ -50,22 +56,32 @@ const Home = () => {
 
   const topThreeCats = results.slice(Math.max(results.length - 3,0))
 
-  return(
-  <div>
-    <h1>HELLO this is the home page</h1>
-    <Link to='/'>View Recent Kitties</Link>
-    <Link to='/search'>Find A Kitty</Link>
-    <Link to='/postkitty'>Post A Kitty</Link>
-    <Link to='/userprofile'>View My Profile</Link>
-    <button onClick={ handleLogout }>Logout</button>
 
-    <ul className="list-group search-results">
-      {topThreeCats.map(cat => (
-      <HomeKitty cat={cat} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
-      ))}
-    </ul>
-  </div>
+return (
+  <React.Fragment>
+    <CssBaseline />
+    <Container maxWidth="lg">
+      <main>
+      <Link to='/'><HomeLogo/></Link>
+      <Link to='/search'>Find A Kitty</Link>
+      <Link to='/postkitty'>Post A Kitty</Link>
+      <Link to='/userprofile'>View My Profile</Link>
+      <button onClick={ handleLogout }>Logout</button>
+      <h2 className="HomeTitle">Recently Updated Kitties </h2>
+      <Grid container spacing={0}>
+        <Grid item xs={12} sm={12}>
+        <div className="homeFlexContainer">
+          <ul className="list-group home-results">
+            {topThreeCats.map(cat => (
+            <HomeKitty cat={cat} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+            ))}
+          </ul>
+        </div>
+        </Grid>
+      </Grid>
+      </main>
+    </Container>
+  </React.Fragment>
 );
 }
-
 export default Home;
