@@ -11,15 +11,25 @@ body {
   background-color: white !important;
   border-radius: 25px;
   margin-top: 20px;
+  min-height: 580px;
 }
 
 h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Sriracha", sans-serif;
 }
 
+.MuiButton-containedPrimary {
+    color: #fff;
+    background-color: #4A503D !important;
+}
+.MuiButton-root{
+    font-family: "Sriracha" !important;
+    font-size: 22px !important
+}
+
 .LandingTitle{
   color: #C35243;
-  font-size: 42px;
+  font-size: 2.5em;
   padding-top: 10%;
 }
 
@@ -33,7 +43,18 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
   padding-top: 10px;
   color: #4A503D;
   font-size: 20px;
+}
 
+.SignupLink{
+  padding-top: 20px;
+  color: #4A503D;
+  font-size: 20px;
+  text-align: center;
+}
+
+.welcomeText{
+  text-align: center;
+  color: #C35243;
 }
 
 a {

@@ -70,6 +70,8 @@ useEffect( () => {
               return "/images/shorthair.png";
             case "Calico":
               return "/images/shorthair.png";
+              case "Devon-Rex":
+                return "/images/shorthair.png";
           case "Scottish-Fold":
             return"/images/tabby.png";
           default:

@@ -18,7 +18,7 @@ const kittyData = [
         kittyPets: false,
     },
     {
-        userId: 2,
+        userId: 1,
         kittyName: "Felix",
         kittyStory: "Felix is a shy guy looking for a new home, he is good with kids and other animals.",
         kittyPicture: "https://res.cloudinary.com/dty2vtbrg/image/upload/v1625863542/kitty_vvava0.png",
@@ -33,7 +33,7 @@ const kittyData = [
         kittyPets: true,
     },
     {
-        userId: 3,
+        userId: 1,
         kittyName: "Wesker",
         kittyStory: "I am posting up wesker for adoption because he is eating me out of house and home. I cannot afford him any longer.",
         kittyPicture: "https://res.cloudinary.com/dty2vtbrg/image/upload/v1625863542/kitty_vvava0.png",
