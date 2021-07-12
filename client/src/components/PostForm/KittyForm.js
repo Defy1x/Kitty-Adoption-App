@@ -58,24 +58,32 @@ useEffect( () => {
         switch(kittyBreed){
           case "Abyssinian":
             return "/images/abyssinian.svg";
+            case "Angora":
+              return "/images/angora.svg";
           case "American-Short-Hair":
             return "/images/american-shorthair.svg";
             case "American-Curl":
               return "/images/american-curl.svg";
+            case "Balinese":
+              return "/images/balinese.svg";
             case "Bengal":
-              return "/images/shorthair.png";
+              return "/images/bengal.svg";
             case "Birman":
-              return "/images/shorthair.png";
+              return "/images/birman.svg";
             case "British-Shorthair":
               return "/images/british-shorthair.svg";
             case "Calico":
-              return "/images/shorthair.png";
+              return "/images/calico.svg";
+              case "Cornish-Rex":
+                return "/images/cornish-rex.svg";
             case "Devon-Rex":
              return "/images/devon-rex.svg";
             case "Egyptian-Mau":
-             return "/images/shorthair.png";
+             return "/images/egyptian-mau.svg";
             case "Exotic-Shorthair":
             return "/images/exotic-shorthair.svg";
+            case "Himalayan":
+            return "/images/himalayan.svg";
             case "Japanese-Bobtail":
             return "/images/japanese-bobtail.svg";
             case "Maine-Coon":
@@ -85,23 +93,27 @@ useEffect( () => {
             case "Munchkin":
             return "/images/munchkin.svg";
             case "Persian":
-            return "/images/shorthair.png"
+            return "/images/persian.svg"
             case "Ragdoll":
             return "/images/ragdoll.svg";;
             case "Russian-Blue":
-            return "/images/shorthair.png";
+            return "/images/russian-blue.svg";
             case "Scottish-Fold":
-            return"/images/tabby.png";
+            return"/images/scottish-fold.svg";
             case "Siamese":
-            return "/images/shorthair.png";
+            return "/images/siamese.svg";
             case "Singapura":
-            return "/images/shorthair.png";
+            return "/images/singapura.svg";
             case "Sphynx":
             return "/images/sphynx.svg";
+            case "Toyger":
+            return "/images/toyger.svg";
+            case "Tuxedo":
+            return "/images/tuxedo.svg";
             case "Other":
             return "/images/american-shorthair.svg";
           default:
-            return "/images/defaultcat.png";
+            return "/images/american-shorthair.svg";
         }
       }
 
@@ -162,15 +174,19 @@ useEffect( () => {
           autoComplete="catBreed"
         >
           <MenuItem value={'Abyssinian'}>Abyssinian</MenuItem>
+          <MenuItem value={'Angora'}>Angora</MenuItem>
           <MenuItem value={'American-Shorthair'}>American Short Hair</MenuItem>
           <MenuItem value={'American-Curl'}>American Curl</MenuItem>
+          <MenuItem value={'Balinese'}>Balinese</MenuItem>
           <MenuItem value={'Bengal'}>Bengal</MenuItem>
           <MenuItem value={'Birman'}>Birman</MenuItem>
           <MenuItem value={'British-Shorthair'}>British Shorthair</MenuItem>
           <MenuItem value={'Calico'}>Calico</MenuItem>
+          <MenuItem value={'Cornish-Rex'}>Cornish Rex</MenuItem>
           <MenuItem value={'Devon-Rex'}>Devon Rex</MenuItem>
           <MenuItem value={'Egyptian-Mau'}>Egyptian Mau</MenuItem>
-          <MenuItem value={'Exotic-Shorthair'}>Exotic-Shorthairs</MenuItem>
+          <MenuItem value={'Exotic-Shorthair'}>Exotic Shorthair</MenuItem>
+          <MenuItem value={'Himalayan'}>Himalayan</MenuItem>
           <MenuItem value={'Japanese-Bobtail'}>Japanese Bobtail</MenuItem>
           <MenuItem value={'Maine-Coon'}>Maine Coon</MenuItem>
           <MenuItem value={'Manx'}>Manx</MenuItem>
@@ -182,6 +198,8 @@ useEffect( () => {
           <MenuItem value={'Siamese'}>Siamese</MenuItem>
           <MenuItem value={'Singapura'}>Singapura</MenuItem>
           <MenuItem value={'Sphynx'}>Sphynx</MenuItem>
+          <MenuItem value={'Toyger'}>Toyger</MenuItem>
+          <MenuItem value={'Tuxedo'}>Tuxedo</MenuItem>
           <MenuItem value={'Other'}>Other / Unknown</MenuItem>
         </Select>
         </Grid>
@@ -192,7 +210,7 @@ useEffect( () => {
             id="demo-simple-select"
             name="catGender"
             label="Is your cat male or female??"
-            value={kittyColor}
+            value={kittyGender}
             onChange={(e)=>setKittyGender(e.target.value)}
             fullWidth
             autoComplete="catGender"

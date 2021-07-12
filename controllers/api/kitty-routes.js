@@ -71,7 +71,6 @@ router.get("/location/:location", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
-        const kittyBreed = req.params.kittyBreed.replace("-", " ")
         const newKitty = await Kitty.create({
           userId: req.session.user_id,
           kittyName: req.body.kittyName,
