@@ -1,13 +1,47 @@
 import React, { useState, useEffect } from "react";
 import  { useParams, useHistory, Link } from 'react-router-dom'
-// import "./style.css";
+import { useAuthContext } from '../contexts/AuthContext';
+import KittyCard from '../components/KittyCard/KittyCard';
 import API from '../utils/API';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import Main from '../components/Main/Main';
+import HomeLogo from '../components/Logo/HomeLogo/HomeLogo';
+import Nav from '../components/Nav/Nav';
 
 function SearchResults(props) {
 
+  const { logout, user, login } = useAuthContext();
+
   const { location } = useParams()
   const history = useHistory()
+  const [addFavorites, setAddFavorites] = useState(false);
+  const [removeFavorites, setRemoveFavorites] = useState(false);
   const [results, setResults] = useState([])
+
+    useEffect(() => {
+      // call on api to get Kitties
+      // setResults with data
+      API.getKitties()
+      .then(response => {
+        setResults(response.data)
+        console.log(response.data)
+      })
+
+      API.getUser()
+      .then(response => {
+        login(response.data)
+      })
+
+      if(addFavorites){
+        setAddFavorites(false);
+      }
+
+      if(removeFavorites){
+        setRemoveFavorites(false);
+      }
+    }, [addFavorites, removeFavorites])
 
   useEffect(() => {
     // call on api to get Kitties
@@ -18,18 +52,34 @@ function SearchResults(props) {
     })
   }, [])
 
-
-  return (
-    <ul className="list-group search-results">
-      {results.map(result => (
-        <li key={result.id} className="list-group-item">
-          <h1>{result.kittyName}</h1>
-          <Link to={`/kittyprofile/${result.id}`}><p>{results.kittyName}</p></Link>
-          <img alt="kitty" src={result.kittyPicture} className="img-fluid" />
-        </li>
-      ))}
-    </ul>
-  );
+return (
+  <React.Fragment>
+    <CssBaseline />
+    <Container maxWidth="lg">
+      <main>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={7}>
+        <Link to='/'><HomeLogo/></Link>
+      </Grid>
+          <Grid item xs={12} sm={5}>
+          <Nav/>
+        </Grid>
+      </Grid>
+      <h2 className="HomeTitle">Search Results: </h2>
+      <Grid container spacing={0}>
+        <Grid item xs={12} sm={12}>
+        <div className="searchFlexContainer">
+          <ul className="list-group search-results">
+            {results.map(result => (
+              <KittyCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+            ))}
+          </ul>
+        </div>
+        </Grid>
+      </Grid>
+      </main>
+    </Container>
+  </React.Fragment>
+);
 }
-
 export default SearchResults;

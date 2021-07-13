@@ -33,6 +33,10 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #C35243 !important;
 }
 
+
+.MuiSvgIcon-root{
+  font-size: 2.5rem !important;
+}
 .MuiTypography-body1{
   font-family: "Sriracha", sans-serif !important;
   color: #C35243 !important;

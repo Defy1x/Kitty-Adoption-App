@@ -71,7 +71,7 @@ return (
           <Nav/>
         </Grid>
       </Grid>
-      <h2 className="HomeTitle">Recently Updated Kitties </h2>
+      <h2 className="HomeTitle">Recently Posted Kitties </h2>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={12}>
         <div className="homeFlexContainer">
