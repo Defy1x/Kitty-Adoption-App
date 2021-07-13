@@ -170,6 +170,14 @@ li {
   text-align: center;
 }
 
+.ResultsText{
+  padding-top: 20px;
+  color: #000;
+  text-align: center;
+  font-size: 1.2em;
+  padding-bottom: 30px;
+}
+
 .UserTitle{
   color: #4A503D;
   text-align: right !important;
