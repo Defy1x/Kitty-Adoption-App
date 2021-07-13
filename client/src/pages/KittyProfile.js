@@ -14,7 +14,7 @@ import Nav from '../components/Nav/Nav';
 const KittyProfile = () => {
 
   const { id } = useParams()
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState({})
   const { logout, user, login } = useAuthContext();
   const [addFavorites, setAddFavorites] = useState(false);
   const [removeFavorites, setRemoveFavorites] = useState(false);
@@ -49,9 +49,7 @@ return (
         <Grid item xs={12} sm={12}>
         <div className="searchFlexContainer">
           <ul className="search-results">
-            {(result => (
-              <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
-            ))}
+              <KittyProfileCard cat={results} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
           </ul>
         </div>
         </Grid>
