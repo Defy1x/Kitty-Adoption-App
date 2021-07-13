@@ -63,8 +63,7 @@ const deleteKitty=(kittyId)=>{
     <ul className="list-group search-results">
       {results.kitty_owner?.map(result => (
         <li key={result.id} className="list-group-item">
-            <KittyDeleteCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
-            <Button onClick={()=> deleteKitty(result.id)}>Delete</Button>
+            <KittyDeleteCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites} deleteKitty={deleteKitty}/>
         </li>
       ))}
     </ul>

@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import "./style.css";
 
-const KittyDeleteCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
+const KittyDeleteCard = ({cat, setAddFavorites, setRemoveFavorites, deleteKitty}) => {
   return(
     <Container maxWidth="lg" className="KittyContainer">
       <Grid container spacing={5}>
@@ -14,7 +14,7 @@ const KittyDeleteCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
           alignItems="center">
           <li key={cat.id} className="kitty-results">
           <Link to={`/kittyprofile/${cat.id}`}><img className="KittyCardImg" alt="kitty" src={cat.kittyPicture} /></Link>
-            <Link to={`/kittyprofile/${cat.id}`}><button className="kittyBtn">Remove {cat.kittyName}'s Post</button></Link>
+          <button className="kittyBtn" onClick={()=> deleteKitty(cat.id)}>Remove {cat.kittyName}'s Post</button>
           </li>
           </Grid>
           <Grid item xs={12} sm={4}>
