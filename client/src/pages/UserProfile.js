@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import  { useParams, useHistory, Link } from 'react-router-dom'
 import { useAuthContext } from '../contexts/AuthContext';
 import KittyProfileCard from '../components/KittyProfileCard/KittyProfileCard';
+import KittyDeleteCard from '../components/KittyDeleteCard/KittyDeleteCard';
 import API from '../utils/API';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -62,10 +63,8 @@ const deleteKitty=(kittyId)=>{
     <ul className="list-group search-results">
       {results.kitty_owner?.map(result => (
         <li key={result.id} className="list-group-item">
-
-          <Link to={`/kittyprofile/${result.id}`}>{result.kittyName}</Link>
-          <img alt="kitty" src={result.kittyPicture} className="img-fluid" />
-          <Button onClick={()=> deleteKitty(result.id)}>Delete</Button>
+            <KittyDeleteCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+            <Button onClick={()=> deleteKitty(result.id)}>Delete</Button>
         </li>
       ))}
     </ul>
