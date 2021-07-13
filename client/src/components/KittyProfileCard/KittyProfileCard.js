@@ -6,6 +6,11 @@ import Container from '@material-ui/core/Container';
 import "./style.css";
 
 const KittyProfileCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
+
+  const openEmail = () =>{
+    window.open(`mailto:admin@zencat.com?subject=${encodeURIComponent(`I am in interested in adopting ${cat.kittyName}!`)}`)
+  }
+
   return(
     <Container maxWidth="lg" className="KittyContainer">
       <Grid container spacing={5}>
@@ -14,7 +19,7 @@ const KittyProfileCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
           alignItems="center">
           <li key={cat.id} className="kitty-results">
           <Link to={`/kittyprofile/${cat.id}`}><img className="KittyCardImg" alt="kitty" src={cat.kittyPicture} /></Link>
-            <Link to={`/kittyprofile/${cat.id}`}><button className="kittyBtn">Adopt {cat.kittyName}!</button></Link>
+            <button className="kittyBtn" onClick={openEmail}>Adopt {cat.kittyName}!</button>
           </li>
           </Grid>
           <Grid item xs={12} sm={4}>

@@ -256,8 +256,8 @@ useEffect( () => {
             <MenuItem value={'Blue'}>Blue</MenuItem>
             <MenuItem value={'Chocolate'}>Chocolate</MenuItem>
             <MenuItem value={'Silver'}>Silver</MenuItem>
-            <MenuItem value={'Cream'}>Grey</MenuItem>
-            <MenuItem value={'Lilac'}>Grey</MenuItem>
+            <MenuItem value={'Cream'}>Cream</MenuItem>
+            <MenuItem value={'Lilac'}>Lilac</MenuItem>
             <MenuItem value={'Mixed'}>Mixed Coat</MenuItem>
             <MenuItem value={'Stripes'}>Stripes</MenuItem>
           </Select>
