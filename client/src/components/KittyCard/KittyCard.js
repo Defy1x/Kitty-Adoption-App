@@ -8,7 +8,7 @@ import "./style.css";
 const KittyCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
   return(
     <Container maxWidth="lg" className="KittyContainer">
-      <Grid container spacing={6}>
+      <Grid container spacing={5}>
         <Grid item xs={12} sm={3}>
           <li key={cat.id} className="kitty-results">
           <Link to={`/kittyprofile/${cat.id}`}><img className="KittyCardImg" alt="kitty" src={cat.kittyPicture} /></Link>
