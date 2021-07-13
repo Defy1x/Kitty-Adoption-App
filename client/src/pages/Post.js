@@ -54,7 +54,9 @@ return (
       </Grid>
       <h1 className="PostTitle">Post a Kitty</h1>
       <Grid container spacing={5}>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4}  direction="column"
+          justifyContent="center"
+          alignItems="center">
         <PostImage/>
         <button className="uploadBtn" onClick={(e)=>showWidget(e, widget)}>Upload Cat's Photo</button>
       </Grid>

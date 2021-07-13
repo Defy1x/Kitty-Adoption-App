@@ -19,3 +19,10 @@
   display: flex;
   flex-direction: column !important;
 }
+
+.kitty-results{
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+}

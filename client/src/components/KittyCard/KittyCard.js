@@ -9,10 +9,12 @@ const KittyCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
   return(
     <Container maxWidth="lg" className="KittyContainer">
       <Grid container spacing={5}>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={3}   direction="column"
+          justifyContent="center"
+          alignItems="center">
           <li key={cat.id} className="kitty-results">
           <Link to={`/kittyprofile/${cat.id}`}><img className="KittyCardImg" alt="kitty" src={cat.kittyPicture} /></Link>
-            <Link to={`/kittyprofile/${cat.id}`}><button className="uploadBtn">Read More!</button></Link>
+            <Link to={`/kittyprofile/${cat.id}`}><button className="kittyBtn">See {cat.kittyName}'s Profile</button></Link>
           </li>
         </Grid>
         <Grid item xs={12} sm={4}>
