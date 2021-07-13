@@ -5,37 +5,39 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import API from '../../utils/API';
 import "./style.css";
 
-const Heart=({kittyId, setAddFavorites, setRemoveFavorites})=> {
+const Heart=({ kittyId })=> {
 
 const { user, setFavoriteKitties } = useAuthContext();
-const [favorites, setFavorites] = useState(false);
-
-const [userFavorite, setUserFavorite] = useState({})
+const [ isFavorite, setIsFavorite ] = useState(false)
 
 useEffect(() => {
-  console.log(user)
- const foundKitty=user?.favoriteKitties?.filter(kitty => kittyId === kitty.id)
- if (foundKitty && foundKitty?.length > 0) {
-   setFavorites(true);
-   setUserFavorite(foundKitty[0])
- }
-}, [user])
+ const isFavoriteKitty = user?.favoriteKitties?.some(kitty => kittyId === kitty.id);
+ setIsFavorite( isFavoriteKitty );
+}, [ user ])
 
-const toggleFavorite=()=> {
-  if (favorites){
-    const favId = userFavorite.userKitty.id;
-    API.removeFavoriteKitty(favId)
-    .then(response => setRemoveFavorites(true))
-  }
-  else {
-    API.addFavoriteKitty( user.id, kittyId)
-    .then(response => setAddFavorites(true))
-  }
+const unfavorite=()=> {
+  API.removeFavoriteKitty(user.id, kittyId)
+    .then(response => {
+      API.getFavoriteKitties(user.id)
+      .then(response => {
+        setFavoriteKitties(response.data);
+      })
+    })
+}
+
+const favorite = () => {
+  API.addFavoriteKitty(user.id, kittyId)
+    .then(response => {
+      API.getFavoriteKitties(user.id)
+      .then(response => {
+        setFavoriteKitties(response.data);
+      })
+    })
 }
 
 return (
 <>
-  {favorites ? <FavoriteIcon onClick={toggleFavorite}/> : <FavoriteBorderIcon onClick={toggleFavorite}/>}
+  {isFavorite ? <FavoriteIcon onClick={unfavorite}/> : <FavoriteBorderIcon onClick={favorite}/>}
 </>
   )
 }

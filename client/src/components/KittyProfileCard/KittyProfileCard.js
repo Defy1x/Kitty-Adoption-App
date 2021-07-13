@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import "./style.css";
 
-const KittyProfileCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
+const KittyProfileCard = ({cat}) => {
 
   const openEmail = () =>{
     window.open(`mailto:admin@zencat.com?subject=${encodeURIComponent(`I am in interested in adopting ${cat.kittyName}!`)}`)
@@ -37,7 +37,7 @@ const KittyProfileCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
             <h4 className="KittyCardDesc">Good with Kids: {cat.kittyKids}</h4>
           </Grid>
           <Grid item xs={12} sm={2}>
-            <Heart kittyId = {cat.id} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites} />
+            <Heart kittyId = {cat.id} />
           </Grid>
         </Grid>
         <Grid container spacing={0}

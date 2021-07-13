@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useContext, useEffect } from "react";
-import reducer, { LOGIN, LOGOUT } from "../reducers/authReducer";
+import reducer, { LOGIN, LOGOUT, SET_FAVORITE_KITTIES } from "../reducers/authReducer";
 import api from "../utils/API";
 
 const AuthContext = createContext();
@@ -23,7 +23,7 @@ function AuthProvider( { value = initialState, ...props } ) {
 
   const setFavoriteKitties = async(favoriteKitties) => {
     dispatch({
-      type: 'SET_FAVORITE_KITTIES',
+      type: SET_FAVORITE_KITTIES,
       payload: favoriteKitties
     });
   }
@@ -45,7 +45,8 @@ function AuthProvider( { value = initialState, ...props } ) {
   const providerValue = {
     ...state,
     login,
-    logout
+    logout,
+    setFavoriteKitties
   }
 
   return <Provider value={ providerValue } { ...props } />;

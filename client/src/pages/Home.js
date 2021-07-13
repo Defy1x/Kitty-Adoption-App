@@ -77,7 +77,7 @@ return (
         <div className="homeFlexContainer">
           <ul className="list-group home-results">
             {topThreeCats.map(cat => (
-            <HomeKitty cat={cat} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+            <HomeKitty cat={cat}/>
             ))}
           </ul>
         </div>

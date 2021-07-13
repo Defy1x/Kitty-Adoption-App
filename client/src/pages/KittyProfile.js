@@ -16,8 +16,6 @@ const KittyProfile = () => {
   const { id } = useParams()
   const [results, setResults] = useState({})
   const { logout, user, login } = useAuthContext();
-  const [addFavorites, setAddFavorites] = useState(false);
-  const [removeFavorites, setRemoveFavorites] = useState(false);
 
 
     const history = useHistory()
@@ -49,7 +47,7 @@ return (
         <Grid item xs={12} sm={12}>
         <div className="searchFlexContainer">
           <ul className="search-results">
-              <KittyProfileCard cat={results} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+              <KittyProfileCard cat={results}/>
           </ul>
         </div>
         </Grid>

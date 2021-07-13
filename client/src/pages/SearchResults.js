@@ -72,7 +72,7 @@ return (
           <div className="searchFlexContainer">
             <ul className="search-results">
               {results.map(result => (
-                <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+                <KittyProfileCard cat={result}/>
               ))}
             </ul>
           </div>

@@ -65,7 +65,7 @@ const deleteKitty=(kittyId)=>{
               <ul className="list-group search-results">
                 {results.kitty_owner?.map(result => (
               <li key={result.id} className="list-group-item">
-                  <KittyDeleteCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites} deleteKitty={deleteKitty}/>
+                  <KittyDeleteCard cat={result} deleteKitty={deleteKitty}/>
                   </li>
                 ))}
               </ul>
@@ -78,7 +78,7 @@ const deleteKitty=(kittyId)=>{
           <ul className="list-group search-results">
             {results.favoriteKitties?.map(result => (
               <li key={result.id} className="list-group-item">
-                <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+                <KittyProfileCard cat={result}/>
               </li>
             ))}
             </ul>

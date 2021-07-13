@@ -19,26 +19,50 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.post("/favorite", async (req, res) => {
+router.put("/:id/favorite/:kittyId", async (req, res) => {
   try {
-    const favoriteKitty = await UserKitty.create(req.body);
-    res.status(200).json(favoriteKitty);
+    const { id, kittyId } = req.params;
+    const user = await User.findByPk( id, { include: [{
+      model: Kitty,
+      as: 'favoriteKitties'
+    }]} )
+    user.addFavoriteKitty(kittyId);
+    res.status(200).end();
   } catch (err) {
-  console.log(err)
+    console.log(err)
     res.status(500).json(err);
   }
 });
 
-router.delete("/deleteFav/:id", async (req, res) => {
+router.delete("/:id/favorite/:kittyId", async (req, res) => {
     try {
-        const deletedFav = await UserKitty.destroy({
-            where: { id: req.params.id }
-        });
-        res.status(200).json(deletedFav);
+      const { id, kittyId } = req.params;
+      const user = await User.findByPk( id, { include: [{
+        model: Kitty,
+        as: 'favoriteKitties'
+      }]} )
+      await user.removeFavoriteKitty(kittyId);
+      res.status(200).end();
     } catch (err) {
-        res.status(400).json(err);
+    console.log(err)
+        res.status(500).json(err);
     }
 });
+
+router.get('/:id/favorite', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findByPk( id, { include: [{
+      model: Kitty,
+      as: 'favoriteKitties'
+    }]} )
+
+    const { favoriteKitties } = user.get({plain: true});
+    res.status(200).json(favoriteKitties);
+  } catch (err) {
+      res.status(400).json(err);
+  }
+})
 
 router.get('/checkAuth', async (req, res) => {
   try {

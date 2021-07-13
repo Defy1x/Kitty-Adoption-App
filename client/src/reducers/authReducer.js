@@ -1,5 +1,6 @@
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
+export const SET_FAVORITE_KITTIES = 'SET_FAVORITE_KITTIES';
 
 const reducer = ( state, { type, payload } ) => {
   switch ( type ) {
@@ -13,14 +14,14 @@ const reducer = ( state, { type, payload } ) => {
 				...state,
 				user: null
 			}
-  case 'SET_FAVORITE_KITTIES':
-  return {
-    ...state,
-    user: {
-      ...state.user,
-      favoriteKitties: payload
-    }
-  }
+    case SET_FAVORITE_KITTIES:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          favoriteKitties: payload
+        }
+      }
 		default:
 			return state;
 	}
