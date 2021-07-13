@@ -231,9 +231,9 @@ useEffect( () => {
             autoComplete="catWeight"
           >
             <MenuItem value={'Underweight'}>Underweight</MenuItem>
-            <MenuItem value={'Slim-and-trim'}>Slim & Trim</MenuItem>
+            <MenuItem value={'Slim & Trim'}>Slim & Trim</MenuItem>
             <MenuItem value={'Average'}>Average</MenuItem>
-            <MenuItem value={'A-little-extra'}>A Little Extra</MenuItem>
+            <MenuItem value={'A Little Extra'}>A Little Extra</MenuItem>
             <MenuItem value={'Chonky'}>Chonky</MenuItem>
           </Select>
         </Grid>
@@ -273,6 +273,7 @@ useEffect( () => {
             autoComplete="catPersonality"
           >
             <MenuItem value={'Playful'}>Playful </MenuItem>
+            <MenuItem value={'Loving'}>Loving </MenuItem>
             <MenuItem value={'Shy'}>Shy</MenuItem>
             <MenuItem value={'Lazy'}>Lazy</MenuItem>
             <MenuItem value={'Anxious'}>Anxious</MenuItem>

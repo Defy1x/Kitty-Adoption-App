@@ -33,7 +33,6 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #C35243 !important;
 }
 
-
 .MuiSvgIcon-root{
   font-size: 2.5rem !important;
 }
@@ -95,18 +94,28 @@ li {
   color: #C35243;
 }
 
+.list-group{
+  flex-direction: row !important;
+}
+
 .list-group-item {
   border: none !important;
 }
 
-.list-group{
-  flex-direction: row !important;
+.search-results{
+  flex-direction: column !important;
 }
 
 .homeFlexContainer{
   padding-top: 10px;
   display: flex !important;
   flex-direction: row !important;
+}
+
+.searchFlexContainer{
+  padding-top: 10px;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .HomeTitle{

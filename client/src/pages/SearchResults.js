@@ -69,7 +69,7 @@ return (
       <Grid container spacing={0}>
         <Grid item xs={12} sm={12}>
         <div className="searchFlexContainer">
-          <ul className="list-group search-results">
+          <ul className="search-results">
             {results.map(result => (
               <KittyCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
             ))}
