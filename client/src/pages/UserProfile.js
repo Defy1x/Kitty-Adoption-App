@@ -55,7 +55,7 @@ const deleteKitty=(kittyId)=>{
             <Nav/>
           </Grid>
         </Grid>
-          <button onClick={ logout }>Logout</button>
+        <h2 className="UserTitle"><button className="logOutBtn" onClick={ logout }>Logout of {user.username}'s Account</button></h2>
         <h2 className="HomeTitle">My Posted Kitties</h2>
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>
