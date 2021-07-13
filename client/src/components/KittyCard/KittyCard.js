@@ -8,14 +8,14 @@ import "./style.css";
 const KittyCard = ({cat, setAddFavorites, setRemoveFavorites}) => {
   return(
     <Container maxWidth="lg" className="KittyContainer">
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={4}>
+      <Grid container spacing={6}>
+        <Grid item xs={12} sm={3}>
           <li key={cat.id} className="kitty-results">
           <Link to={`/kittyprofile/${cat.id}`}><img className="KittyCardImg" alt="kitty" src={cat.kittyPicture} /></Link>
             <Link to={`/kittyprofile/${cat.id}`}><button className="uploadBtn">Read More!</button></Link>
           </li>
         </Grid>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={4}>
           <h4 className="KittyCardDescTop">Kitty's Name: {cat.kittyName}</h4>
           <h4 className="KittyCardDesc">Breed: {cat.kittyBreed}</h4>
           <h4 className="KittyCardDesc">Color: {cat.kittyColor}</h4>

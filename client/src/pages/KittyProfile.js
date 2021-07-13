@@ -3,8 +3,11 @@ import  { useParams, useHistory, Link } from 'react-router-dom'
 import API from '../utils/API';
 
 const KittyProfile = () => {
+
   const { id } = useParams()
   const [results, setResults] = useState([])
+
+    const history = useHistory()
 
   useEffect(() => {
     // call on api to get Kitties
@@ -16,7 +19,7 @@ const KittyProfile = () => {
   }, [])
 
 return (
-  <p>{results.kittyName}</p>
+    <h2 className="HomeTitle"><button onClick={() => history.goBack()}>Back to Previous Page</button></h2>
 )
 }
 

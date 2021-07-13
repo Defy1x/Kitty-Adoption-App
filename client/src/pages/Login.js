@@ -85,7 +85,7 @@ const Login = () => {
             color="primary"
             onClick={ handleSubmit }
           >
-            Sign In
+            Sign in
           </Button>
         </form>
       <Link to='/signup'><p className="SignupLink">Don't have an account? Sign up.</p></Link>

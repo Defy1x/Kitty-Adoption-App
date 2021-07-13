@@ -26,6 +26,7 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: "Sriracha" !important;
     font-size: 22px !important;
     text-transform: none !important;
+    border-radius: 20px !important;
 }
 
 .MuiFormLabel-root {
