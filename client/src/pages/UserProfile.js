@@ -57,26 +57,36 @@ const deleteKitty=(kittyId)=>{
           </Grid>
         </Grid>
         <h2 className="UserTitle"><button className="logOutBtn" onClick={ logout }>Logout of {user.username}'s Account</button></h2>
-        <h2 className="HomeTitle">My Posted Kitties</h2>
+
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>
-    <ul className="list-group search-results">
-      {results.kitty_owner?.map(result => (
-        <li key={result.id} className="list-group-item">
-            <KittyDeleteCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites} deleteKitty={deleteKitty}/>
-        </li>
-      ))}
-    </ul>
-    <h2 className="HomeTitle">My Favorite Kitties</h2>
-    <div className="searchFlexContainer">
-    <ul className="list-group search-results">
-      {results.favoriteKitties?.map(result => (
-        <li key={result.id} className="list-group-item">
-          <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
-        </li>
-      ))}
-      </ul>
-    </div>
+            <h2 className="HomeTitle">My Posted Kitties</h2>
+            {results.kitty_owner?.length > 0 ? (
+              <ul className="list-group search-results">
+                {results.kitty_owner?.map(result => (
+              <li key={result.id} className="list-group-item">
+                  <KittyDeleteCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites} deleteKitty={deleteKitty}/>
+                  </li>
+                ))}
+              </ul>
+            ): <h2 className="HomeTitle">No kitties to display! Post some kitties!</h2>
+          }
+
+        <h2 className="HomeTitle">My Favorite Kitties</h2>
+        {results.favoriteKitties?.length > 0 ? (
+          <>
+          <div className="searchFlexContainer">
+          <ul className="list-group search-results">
+            {results.favoriteKitties?.map(result => (
+              <li key={result.id} className="list-group-item">
+                <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+              </li>
+            ))}
+            </ul>
+        </div>
+        </>
+      ) : <h2 className="HomeTitle">No favorite kitties to display</h2>
+        }
     </Grid>
   </Grid>
   </main>
