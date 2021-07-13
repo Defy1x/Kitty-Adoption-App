@@ -258,6 +258,8 @@ useEffect( () => {
             <MenuItem value={'Silver'}>Silver</MenuItem>
             <MenuItem value={'Cream'}>Grey</MenuItem>
             <MenuItem value={'Lilac'}>Grey</MenuItem>
+            <MenuItem value={'Mixed'}>Mixed Coat</MenuItem>
+            <MenuItem value={'Stripes'}>Stripes</MenuItem>
           </Select>
         </Grid>
         <Grid item xs={12} sm={6}>

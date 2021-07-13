@@ -72,7 +72,7 @@ return (
         </Grid>
       </Grid>
       <h2 className="HomeTitle">Recently Posted Kitties </h2>
-      <Grid container spacing={0}>
+      <Grid container spacing={3}>
         <Grid item xs={12} sm={12}>
         <div className="homeFlexContainer">
           <ul className="list-group home-results">
