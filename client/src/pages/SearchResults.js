@@ -65,7 +65,7 @@ return (
           <Nav/>
         </Grid>
       </Grid>
-      <h2 className="HomeTitle">Search Results: </h2>
+      <h2 className="HomeTitle"><button onClick={() => history.goBack()}>Back to Search</button></h2>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={12}>
         <div className="searchFlexContainer">
