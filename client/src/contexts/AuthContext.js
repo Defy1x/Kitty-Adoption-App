@@ -21,6 +21,13 @@ function AuthProvider( { value = initialState, ...props } ) {
     });
   }
 
+  const setFavoriteKitties = async(favoriteKitties) => {
+    dispatch({
+      type: 'SET_FAVORITE_KITTIES',
+      payload: favoriteKitties
+    });
+  }
+
   const logout = () => {
     dispatch( { type: LOGOUT } );
   }

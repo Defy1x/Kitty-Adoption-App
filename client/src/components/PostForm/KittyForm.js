@@ -61,9 +61,9 @@ useEffect( () => {
             return "/images/abyssinian.svg";
             case "Angora":
               return "/images/angora.svg";
-          case "American-Short-Hair":
+          case "American Shorthair":
             return "/images/american-shorthair.svg";
-            case "American-Curl":
+            case "American Curl":
               return "/images/american-curl.svg";
             case "Balinese":
               return "/images/balinese.svg";
@@ -71,23 +71,23 @@ useEffect( () => {
               return "/images/bengal.svg";
             case "Birman":
               return "/images/birman.svg";
-            case "British-Shorthair":
+            case "British Shorthair":
               return "/images/british-shorthair.svg";
             case "Calico":
               return "/images/calico.svg";
-              case "Cornish-Rex":
+              case "Cornish Rex":
                 return "/images/cornish-rex.svg";
-            case "Devon-Rex":
+            case "Devon Rex":
              return "/images/devon-rex.svg";
-            case "Egyptian-Mau":
+            case "Egyptian Mau":
              return "/images/egyptian-mau.svg";
-            case "Exotic-Shorthair":
+            case "Exotic Shorthair":
             return "/images/exotic-shorthair.svg";
             case "Himalayan":
             return "/images/himalayan.svg";
-            case "Japanese-Bobtail":
+            case "Japanese Bobtail":
             return "/images/japanese-bobtail.svg";
-            case "Maine-Coon":
+            case "Maine Coon":
             return "/images/maine-coon.svg";
             case "Manx":
             return "/images/manx.svg";
@@ -97,9 +97,9 @@ useEffect( () => {
             return "/images/persian.svg"
             case "Ragdoll":
             return "/images/ragdoll.svg";;
-            case "Russian-Blue":
+            case "Russian Blue":
             return "/images/russian-blue.svg";
-            case "Scottish-Fold":
+            case "Scottish Fold":
             return"/images/scottish-fold.svg";
             case "Siamese":
             return "/images/siamese.svg";
@@ -153,11 +153,11 @@ useEffect( () => {
             fullWidth
             autoComplete="catLocation"
           >
-            <MenuItem value={'New-York'}>New York </MenuItem>
-            <MenuItem value={'Los-Angeles'}>Los Angeles</MenuItem>
+            <MenuItem value={'New York'}>New York </MenuItem>
+            <MenuItem value={'Los Angeles'}>Los Angeles</MenuItem>
             <MenuItem value={'Atlanta'}>Atlanta</MenuItem>
             <MenuItem value={'Chicago'}>Chicago</MenuItem>
-            <MenuItem value={'San-Francisco'}>San Francisco</MenuItem>
+            <MenuItem value={'San Francisco'}>San Francisco</MenuItem>
           </Select>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -174,26 +174,26 @@ useEffect( () => {
         >
           <MenuItem value={'Abyssinian'}>Abyssinian</MenuItem>
           <MenuItem value={'Angora'}>Angora</MenuItem>
-          <MenuItem value={'American-Shorthair'}>American Short Hair</MenuItem>
-          <MenuItem value={'American-Curl'}>American Curl</MenuItem>
+          <MenuItem value={'American Shorthair'}>American Short Hair</MenuItem>
+          <MenuItem value={'American Curl'}>American Curl</MenuItem>
           <MenuItem value={'Balinese'}>Balinese</MenuItem>
           <MenuItem value={'Bengal'}>Bengal</MenuItem>
           <MenuItem value={'Birman'}>Birman</MenuItem>
-          <MenuItem value={'British-Shorthair'}>British Shorthair</MenuItem>
+          <MenuItem value={'British Shorthair'}>British Shorthair</MenuItem>
           <MenuItem value={'Calico'}>Calico</MenuItem>
-          <MenuItem value={'Cornish-Rex'}>Cornish Rex</MenuItem>
-          <MenuItem value={'Devon-Rex'}>Devon Rex</MenuItem>
-          <MenuItem value={'Egyptian-Mau'}>Egyptian Mau</MenuItem>
-          <MenuItem value={'Exotic-Shorthair'}>Exotic Shorthair</MenuItem>
+          <MenuItem value={'Cornish Rex'}>Cornish Rex</MenuItem>
+          <MenuItem value={'Devon Rex'}>Devon Rex</MenuItem>
+          <MenuItem value={'Egyptian Mau'}>Egyptian Mau</MenuItem>
+          <MenuItem value={'Exotic Shorthair'}>Exotic Shorthair</MenuItem>
           <MenuItem value={'Himalayan'}>Himalayan</MenuItem>
-          <MenuItem value={'Japanese-Bobtail'}>Japanese Bobtail</MenuItem>
-          <MenuItem value={'Maine-Coon'}>Maine Coon</MenuItem>
+          <MenuItem value={'Japanese Bobtail'}>Japanese Bobtail</MenuItem>
+          <MenuItem value={'Maine Coon'}>Maine Coon</MenuItem>
           <MenuItem value={'Manx'}>Manx</MenuItem>
           <MenuItem value={'Munchkin'}>Munchkin</MenuItem>
           <MenuItem value={'Persian'}>Persian</MenuItem>
           <MenuItem value={'Ragdoll'}>Ragdoll</MenuItem>
-          <MenuItem value={'Russian-Blue'}>Russian Blue</MenuItem>
-          <MenuItem value={'Scottish-Fold'}>Scottish Fold</MenuItem>
+          <MenuItem value={'Russian Blue'}>Russian Blue</MenuItem>
+          <MenuItem value={'Scottish Fold'}>Scottish Fold</MenuItem>
           <MenuItem value={'Siamese'}>Siamese</MenuItem>
           <MenuItem value={'Singapura'}>Singapura</MenuItem>
           <MenuItem value={'Sphynx'}>Sphynx</MenuItem>

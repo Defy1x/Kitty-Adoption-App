@@ -7,7 +7,7 @@ import "./style.css";
 
 const Heart=({kittyId, setAddFavorites, setRemoveFavorites})=> {
 
-const { user } = useAuthContext();
+const { user, setFavoriteKitties } = useAuthContext();
 const [favorites, setFavorites] = useState(false);
 
 const [userFavorite, setUserFavorite] = useState({})

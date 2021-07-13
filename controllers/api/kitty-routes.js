@@ -53,6 +53,7 @@ router.get("/id/:id", async (req, res) => {
 router.get("/location/:location", async (req, res) => {
   try {
     const location = req.params.location.replace("-", " ")
+    console.log(location)
     const kittyData = await Kitty.findAll({
       where: {
         kittyLocation: location

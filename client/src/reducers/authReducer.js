@@ -13,6 +13,14 @@ const reducer = ( state, { type, payload } ) => {
 				...state,
 				user: null
 			}
+  case 'SET_FAVORITE_KITTIES':
+  return {
+    ...state,
+    user: {
+      ...state.user,
+      favoriteKitties: payload
+    }
+  }
 		default:
 			return state;
 	}

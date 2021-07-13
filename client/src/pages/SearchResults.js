@@ -23,7 +23,7 @@ function SearchResults(props) {
     <ul className="list-group search-results">
       {results.map(result => (
         <li key={result.id} className="list-group-item">
-          <h1>{results.kittyName}</h1>
+          <h1>{result.kittyName}</h1>
           <Link to={`/kittyprofile/${result.id}`}><p>{results.kittyName}</p></Link>
           <img alt="kitty" src={result.kittyPicture} className="img-fluid" />
         </li>
