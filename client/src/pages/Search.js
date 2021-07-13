@@ -10,6 +10,7 @@ import Container from '@material-ui/core/Container';
 import Main from '../components/Main/Main';
 import HomeLogo from '../components/Logo/HomeLogo/HomeLogo';
 import SearchImage from '../components/SearchImage/SearchImage';
+import Nav from '../components/Nav/Nav';
 
 
 function Search() {
@@ -42,11 +43,14 @@ return (
     <CssBaseline />
     <Container maxWidth="lg">
       <main>
-      <Link to='/'><HomeLogo/></Link>
-      <Link to='/search'>Find A Kitty</Link>
-      <Link to='/postkitty'>Post A Kitty</Link>
-      <Link to='/userprofile'>View My Profile</Link>
-      <button onClick={ handleLogout }>Logout</button>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={7}>
+        <Link to='/'><HomeLogo/></Link>
+      </Grid>
+          <Grid item xs={12} sm={5}>
+          <Nav/>
+        </Grid>
+      </Grid>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
         <SearchImage/>

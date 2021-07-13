@@ -10,6 +10,7 @@ import Main from '../components/Main/Main';
 import HomeLogo from '../components/Logo/HomeLogo/HomeLogo';
 import KittyForm from '../components/PostForm/KittyForm';
 import PostImage from '../components/PostImage/PostImage';
+import Nav from '../components/Nav/Nav';
 
 const Post = () => {
   const { logout, user, login } = useAuthContext();
@@ -43,18 +44,21 @@ return (
     <CssBaseline />
     <Container maxWidth="lg">
       <main>
-      <Link to='/'><HomeLogo/></Link>
-      <Link to='/search'>Find A Kitty</Link>
-      <Link to='/postkitty'>Post A Kitty</Link>
-      <Link to='/userprofile'>View My Profile</Link>
-      <button onClick={ handleLogout }>Logout</button>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={7}>
+        <Link to='/'><HomeLogo/></Link>
+      </Grid>
+          <Grid item xs={12} sm={5}>
+          <Nav/>
+        </Grid>
+      </Grid>
       <h1 className="PostTitle">Post a Kitty</h1>
       <Grid container spacing={5}>
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={4}>
         <PostImage/>
         <button className="uploadBtn" onClick={(e)=>showWidget(e, widget)}>Upload Cat's Photo</button>
       </Grid>
-        <Grid item xs={12} sm={9}>
+        <Grid item xs={12} sm={8}>
          <KittyForm/>
         </Grid>
       </Grid>

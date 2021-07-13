@@ -1,0 +1,44 @@
+.NavFlex{
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+}
+
+.navBtn{
+  color: #FFF;
+  background-color: #C35243;
+  font-family: "Sriracha", sans-serif !important;
+  font-size: 1.6em;
+  border: none;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+}
+
+
+.navBtnGreen{
+  color: #FFF;
+  background-color: #4A503D;
+  font-family: "Sriracha", sans-serif !important;
+  font-size: 1.6em;
+  border: none;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 5px;
+  margin-right: 10px;
+}
+
+.accountIcon{
+  fill: #FF9F9F !important;
+  font-size: 2.5rem !important;
+}
+
+.navListFlex{
+  display: flex;
+  align-items: flex-end;
+}

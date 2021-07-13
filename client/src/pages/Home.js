@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Main from '../components/Main/Main';
 import HomeLogo from '../components/Logo/HomeLogo/HomeLogo';
+import Nav from '../components/Nav/Nav';
 
 
 const Home = () => {
@@ -62,11 +63,14 @@ return (
     <CssBaseline />
     <Container maxWidth="lg">
       <main>
-      <Link to='/'><HomeLogo/></Link>
-      <Link to='/search'>Find A Kitty</Link>
-      <Link to='/postkitty'>Post A Kitty</Link>
-      <Link to='/userprofile'>View My Profile</Link>
-      <button onClick={ handleLogout }>Logout</button>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={7}>
+        <Link to='/'><HomeLogo/></Link>
+      </Grid>
+          <Grid item xs={12} sm={5}>
+          <Nav/>
+        </Grid>
+      </Grid>
       <h2 className="HomeTitle">Recently Updated Kitties </h2>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={12}>
