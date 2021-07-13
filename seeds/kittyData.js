@@ -14,8 +14,8 @@ const kittyData = [
         kittyLocation: "Chicago",
         kittyPersonality: "Playful",
         kittyAge: 3,
-        kittyKids: true,
-        kittyPets: false,
+        kittyKids: "Yes",
+        kittyPets: "No",
     },
     {
         userId: 1,
@@ -29,8 +29,8 @@ const kittyData = [
         kittyLocation: "Atlanta",
         kittyPersonality: "Shy",
         kittyAge: 6,
-        kittyKids: true,
-        kittyPets: true,
+        kittyKids: "Yes",
+        kittyPets: "Yes",
     },
     {
         userId: 1,
@@ -44,8 +44,8 @@ const kittyData = [
         kittyLocation: "New York",
         kittyPersonality: "Chill",
         kittyAge: 7,
-        kittyKids: false,
-        kittyPets: true,
+        kittyKids: "No",
+        kittyPets: "Yes",
     },
     {
         userId: 1,
@@ -59,8 +59,8 @@ const kittyData = [
         kittyLocation: "Los Angeles",
         kittyPersonality: "Chill",
         kittyAge: 5,
-        kittyKids: true,
-        kittyPets: true,
+        kittyKids: "No",
+        kittyPets: "Yes",
     },
     {
         userId: 1,
@@ -74,8 +74,8 @@ const kittyData = [
         kittyLocation: "San Francisco",
         kittyPersonality: "Playful",
         kittyAge: 9,
-        kittyKids: false,
-        kittyPets: false,
+        kittyKids: "No",
+        kittyPets: "Yes",
     }
 ]
 

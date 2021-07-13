@@ -1,0 +1,33 @@
+.KittyCardImg{
+  width: 100%;
+  text-align: center;
+}
+
+.KittyCardDesc{
+  padding-top: 10px;
+}
+
+.KittyCardDescTop{
+  padding-top: 60px;
+}
+
+.KittyCardDescStory{
+  padding-left: 10px;
+}
+
+
+.KittyContainer{
+  border: 2px #F2F2EF solid;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column !important;
+}
+
+.kitty-results{
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+}

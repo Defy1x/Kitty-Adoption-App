@@ -320,6 +320,38 @@ useEffect( () => {
             <MenuItem value={20}>20</MenuItem>
           </Select>
         </Grid>
+        <Grid item xs={12} sm={6}>
+          <InputLabel>Is your cat good with kids?</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            name="catKids"
+            label="Is your cat good with kids?"
+            value={kittyKids}
+            onChange={(e)=>setKittyKids(e.target.value)}
+            fullWidth
+            autoComplete="catKids"
+          >
+            <MenuItem value={'Yes'}>Yes </MenuItem>
+            <MenuItem value={'No'}>No</MenuItem>
+          </Select>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <InputLabel>Is your cat friendly with other animals?</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            name="catKids"
+            label="Is your cat friendly with other animals?"
+            value={kittyPets}
+            onChange={(e)=>setKittyPets(e.target.value)}
+            fullWidth
+            autoComplete="catPets"
+          >
+            <MenuItem value={'Yes'}>Yes </MenuItem>
+            <MenuItem value={'No'}>No </MenuItem>
+          </Select>
+        </Grid>
         <Grid item xs={12}>
           <TextField
             required
@@ -332,15 +364,6 @@ useEffect( () => {
             autoComplete="kittyDescription"
           />
         </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="kittyKids" checked={kittyKids} onChange={()=>setKittyKids(!kittyKids)} />}
-            label="Is your cat good with kids?"
-          />
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="kittyPets" checked={kittyPets} onChange={()=>setKittyPets(!kittyPets)}/>}
-            label="is your cat good with other animals?"
-          />
           <Button
             type="submit"
             fullWidth
@@ -350,7 +373,6 @@ useEffect( () => {
           >
             Post your Kitty!
           </Button>
-        </Grid>
       </Grid>
     </div>
     </React.Fragment>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import  { useParams, useHistory, Link } from 'react-router-dom'
 import { useAuthContext } from '../contexts/AuthContext';
-import KittyCard from '../components/KittyCard/KittyCard';
+import KittyProfileCard from '../components/KittyProfileCard/KittyProfileCard';
 import API from '../utils/API';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -55,6 +55,7 @@ const deleteKitty=(kittyId)=>{
             <Nav/>
           </Grid>
         </Grid>
+          <button onClick={ logout }>Logout</button>
         <h2 className="HomeTitle">My Posted Kitties</h2>
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>
@@ -73,7 +74,7 @@ const deleteKitty=(kittyId)=>{
     <ul className="list-group search-results">
       {results.favoriteKitties?.map(result => (
         <li key={result.id} className="list-group-item">
-          <KittyCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+          <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
         </li>
       ))}
       </ul>

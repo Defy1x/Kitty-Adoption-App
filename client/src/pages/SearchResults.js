@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import  { useParams, useHistory, Link } from 'react-router-dom'
 import { useAuthContext } from '../contexts/AuthContext';
-import KittyCard from '../components/KittyCard/KittyCard';
+import KittyProfileCard from '../components/KittyProfileCard/KittyProfileCard';
 import API from '../utils/API';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -71,7 +71,7 @@ return (
         <div className="searchFlexContainer">
           <ul className="search-results">
             {results.map(result => (
-              <KittyCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+              <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
             ))}
           </ul>
         </div>

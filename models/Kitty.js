@@ -69,12 +69,14 @@ Kitty.init(
             defaultValue: 0
           },
           kittyKids:{
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: true,
+            defaultValue: "N/A"
           },
           kittyPets:{
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: true,
+            defaultValue: "N/A"
           }
       },
     {
