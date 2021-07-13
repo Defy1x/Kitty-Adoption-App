@@ -74,7 +74,6 @@ const deleteKitty=(kittyId)=>{
 
         <h2 className="HomeTitle">My Favorite Kitties</h2>
         {results.favoriteKitties?.length > 0 ? (
-          <>
           <div className="searchFlexContainer">
           <ul className="list-group search-results">
             {results.favoriteKitties?.map(result => (
@@ -84,7 +83,6 @@ const deleteKitty=(kittyId)=>{
             ))}
             </ul>
         </div>
-        </>
       ) : <h2 className="HomeTitle">No favorite kitties to display</h2>
         }
     </Grid>

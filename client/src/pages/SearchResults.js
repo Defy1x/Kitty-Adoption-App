@@ -65,16 +65,19 @@ return (
           <Nav/>
         </Grid>
       </Grid>
-      <h2 className="HomeTitle">Search Results for {location}</h2>
+      <h2 className="HomeTitle">Search Results for {location.split('-').join(' ')}</h2>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={12}>
-        <div className="searchFlexContainer">
-          <ul className="search-results">
-            {results.map(result => (
-              <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
-            ))}
-          </ul>
-        </div>
+        {results?.length > 0 ? (
+          <div className="searchFlexContainer">
+            <ul className="search-results">
+              {results.map(result => (
+                <KittyProfileCard cat={result} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites}/>
+              ))}
+            </ul>
+          </div>
+        ): <h2 className="HomeTitle">No kitties found at this location.</h2>
+      }
         </Grid>
       </Grid>
       </main>

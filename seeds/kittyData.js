@@ -26,7 +26,7 @@ const kittyData = [
         kittyGender: "Male",
         kittyWeight: "Underweight",
         kittyColor: "Black",
-        kittyLocation: "Atlanta",
+        kittyLocation: "Chicago",
         kittyPersonality: "Shy",
         kittyAge: 6,
         kittyKids: "Yes",
