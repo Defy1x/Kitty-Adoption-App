@@ -24,14 +24,19 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .MuiButton-root{
     font-family: "Sriracha" !important;
-    font-size: 22px !important
+    font-size: 22px !important;
+    text-transform: none !important;
+}
+
+.MuiFormLabel-root {
+    font-family: "Sriracha", sans-serif !important;
+    color: #C35243 !important;
 }
 
 .LandingTitle{
   color: #C35243;
   font-size: 2.5em;
   padding-top: 10%;
-
 }
 
 .SearchTitle{
@@ -39,6 +44,18 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-size: 2.5em;
   padding-top: 20%;
   padding-bottom: 10px;
+}
+
+.uploadBtn{
+  color: #FFF;
+  background-color: #C35243;
+  font-family: "Sriracha", sans-serif !important;
+  font-size: 1.4em;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  width: 70%;
 }
 
 .LandingText{
@@ -82,6 +99,12 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6 {
 .HomeTitle{
   color: #4A503D;
   text-align: center;
+}
+
+.PostTitle{
+  color: #C35243;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 img{

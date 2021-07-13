@@ -1,26 +1,3 @@
-// import React from 'react';
-// import SingleKitty from '../components/SingleKitty/SingleKitty';
-// import { useAuthContext } from '../contexts/AuthContext';
-//
-// const array = [{
-//   kittyName: "Wesker",
-//   kittyAge: 7
-// }]
-//
-// const SearchResults = () => {
-//   const { logout } = useAuthContext();
-//   return(
-//   <div>
-//   {array.map(kitty => {
-//     return <SingleKitty kittyName={kitty.kittyName} kittyAge={kitty.kittyAge}/>
-//   })}
-//
-//   </div>
-// );
-// }
-//
-// export default SearchResults;
-
 import React, { useState, useEffect } from "react";
 import  { useParams, useHistory, Link } from 'react-router-dom'
 // import "./style.css";
@@ -46,7 +23,8 @@ function SearchResults(props) {
     <ul className="list-group search-results">
       {results.map(result => (
         <li key={result.id} className="list-group-item">
-          <Link to={`/kittyprofile/${result.id}`}>View Recent Kitties</Link>
+          <h1>{results.kittyName}</h1>
+          <Link to={`/kittyprofile/${result.id}`}><p>{results.kittyName}</p></Link>
           <img alt="kitty" src={result.kittyPicture} className="img-fluid" />
         </li>
       ))}

@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import { Link, useHistory } from "react-router-dom";
 import API from '../../utils/API';
+import "./style.css";
 
 export default function KittyForm() {
 const [kittyName, setKittyName] = useState("")
@@ -125,9 +126,7 @@ useEffect( () => {
 
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Upload A Kitty
-      </Typography>
+    <div className="PostForm">
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
         <InputLabel>What is your Cat's Name?</InputLabel>
@@ -350,6 +349,7 @@ useEffect( () => {
           </Button>
         </Grid>
       </Grid>
+    </div>
     </React.Fragment>
   );
 }
