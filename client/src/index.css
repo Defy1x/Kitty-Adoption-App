@@ -123,9 +123,10 @@ li {
 }
 
 .LandingLink{
-  padding-top: 10px;
+  padding-top: 5px;
   color: #4A503D;
   font-size: 20px;
+  text-align: center;
 }
 
 .SignupLink{

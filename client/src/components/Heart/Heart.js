@@ -12,7 +12,6 @@ const [ isFavorite, setIsFavorite ] = useState(false)
 
 useEffect(() => {
  const isFavoriteKitty = user?.favoriteKitties?.some(kitty => kittyId === kitty.id);
-
 }, [ user ])
 
 const unfavorite=()=> {

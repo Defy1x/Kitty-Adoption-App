@@ -24,12 +24,15 @@ const Landing = () => {
           <Grid item xs={12} sm={6}>
           <LandingImage/>
         </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6}
+          direction="column"
+          justifyContent="center"
+          alignItems="center">
             <h1 className="LandingTitle">Find Your Furever Home With Us</h1>
             <p className="LandingText">Adopt a cat close to you or post a furry friend for someone else to love. We work with local shelters to help you find the perfect kitty. </p>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={9} alignItems="center">
-              <Link to='/signup'><GetStarted/></Link>
+              <Grid item xs={12} sm={10}>
+              <Link to='/signup'><p className="LandingLink"><GetStarted/></p></Link>
               <Link to='/login'><p className="LandingLink">Already have an account? Sign in.</p></Link>
               </Grid>
             </Grid>
