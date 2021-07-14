@@ -76,7 +76,7 @@ return (
               ))}
             </ul>
           </div>
-        ): <h3 className="ResultsText">No kitties found at this location.</h3>
+        ): <h3 className="ResultsText">No kitties found at this location!</h3>
       }
         </Grid>
       </Grid>
