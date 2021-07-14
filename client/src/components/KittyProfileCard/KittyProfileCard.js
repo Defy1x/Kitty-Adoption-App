@@ -37,7 +37,7 @@ const KittyProfileCard = ({cat}) => {
             <h4 className="KittyCardDesc">Good with Kids: {cat.kittyKids}</h4>
           </Grid>
           <Grid item xs={12} sm={2}>
-            <Heart kittyId = {cat.id} />
+            <Heart kittyId={cat.id} />
           </Grid>
         </Grid>
         <Grid container spacing={0}

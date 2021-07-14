@@ -15,7 +15,6 @@ const KittyProfile = () => {
 
   const { id } = useParams()
   const [results, setResults] = useState({})
-  const { logout, user, login } = useAuthContext();
 
 
     const history = useHistory()

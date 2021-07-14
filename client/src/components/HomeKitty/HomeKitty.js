@@ -18,7 +18,7 @@ const HomeKitty = ({cat}) => {
           </li>
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Heart kittyId = {cat.id}/>
+          <Heart kittyId={cat.id}/>
         </Grid>
       </Grid>
     </Container>

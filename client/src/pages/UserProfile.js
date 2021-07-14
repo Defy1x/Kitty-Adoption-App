@@ -14,20 +14,7 @@ import Button from '@material-ui/core/Button';
 
 
 const UserProfile = () => {
-  const { logout, user } = useAuthContext();
-
-  const [results, setResults] = useState([])
-
-  useEffect(() => {
-    console.log(user)
-    // call on api to get Kitties
-    // setResults with data
-    API.getUser(user.id)
-    .then(response => {
-      setResults(response.data)
-      console.log(response.data)
-    })
-  }, [])
+  const { logout, login, user } = useAuthContext();
 
 const deleteKitty=(kittyId)=>{
   API.deleteKitty(kittyId)
@@ -35,8 +22,11 @@ const deleteKitty=(kittyId)=>{
     console.log(response)
     if (response.data === 1) {
       console.log("in here")
-      const newKittyArray = results.kitty_owner.filter(kitty => kitty.id !== kittyId)
-      setResults({...results, kitty_owner: newKittyArray})
+      const newKittyArray = user.kitty_owner.filter(kitty => kitty.id !== kittyId)
+      API.getUser(user.id)
+      .then(response => {
+        login(response.data)
+      })
     }
   })
 }
@@ -59,9 +49,9 @@ const deleteKitty=(kittyId)=>{
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>
             <h2 className="HomeTitle">My Posted Kitties</h2>
-            {results.kitty_owner?.length > 0 ? (
+            {user.kitty_owner?.length > 0 ? (
               <ul className="list-group search-results">
-                {results.kitty_owner?.map(result => (
+                {user.kitty_owner?.map(result => (
               <li key={result.id} className="list-group-item">
                   <KittyDeleteCard cat={result} deleteKitty={deleteKitty}/>
                   </li>
@@ -71,10 +61,10 @@ const deleteKitty=(kittyId)=>{
           }
 
         <h2 className="HomeTitle">My Favorite Kitties</h2>
-        {results.favoriteKitties?.length > 0 ? (
+        {user.favoriteKitties?.length > 0 ? (
           <div className="searchFlexContainer">
           <ul className="list-group search-results">
-            {results.favoriteKitties?.map(result => (
+            {user.favoriteKitties?.map(result => (
               <li key={result.id} className="list-group-item">
                 <KittyProfileCard cat={result}/>
               </li>
