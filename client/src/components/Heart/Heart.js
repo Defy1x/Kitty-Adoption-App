@@ -12,10 +12,11 @@ const [ isFavorite, setIsFavorite ] = useState(false)
 
 useEffect(() => {
  const isFavoriteKitty = user?.favoriteKitties?.some(kitty => kittyId === kitty.id);
+ setIsFavorite( isFavoriteKitty );
 }, [ user ])
 
 const unfavorite=()=> {
-   setIsFavorite( false );
+
   API.removeFavoriteKitty(user.id, kittyId)
     .then(response => {
       API.getFavoriteKitties(user.id)
@@ -26,7 +27,6 @@ const unfavorite=()=> {
 }
 
 const favorite = () => {
-   setIsFavorite( true );
   API.addFavoriteKitty(user.id, kittyId)
     .then(response => {
       API.getFavoriteKitties(user.id)

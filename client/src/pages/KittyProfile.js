@@ -47,7 +47,7 @@ return (
         <Grid item xs={12} sm={12}>
         <div className="searchFlexContainer">
           <ul className="search-results">
-              <KittyProfileCard cat={results}/>
+            <KittyProfileCard cat={results}/>
           </ul>
         </div>
         </Grid>
