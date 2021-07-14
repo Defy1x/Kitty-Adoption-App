@@ -57,7 +57,6 @@ const Home = () => {
 
   const topThreeCats = results.slice(Math.max(results.length - 3,0))
 
-
 return (
   <React.Fragment>
     <CssBaseline />
@@ -74,6 +73,7 @@ return (
       <h2 className="HomeTitle">Recently Posted Kitties </h2>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12}>
+        {results?.length > 0 ? (
         <div className="homeFlexContainer">
           <ul className="list-group home-results">
             {topThreeCats.map(cat => (
@@ -81,6 +81,8 @@ return (
             ))}
           </ul>
         </div>
+      ): <h3 className="ResultsText">No kitties to display!</h3>
+    }
         </Grid>
       </Grid>
       </main>
