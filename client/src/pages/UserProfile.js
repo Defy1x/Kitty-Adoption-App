@@ -16,17 +16,28 @@ import Button from '@material-ui/core/Button';
 const UserProfile = () => {
   const { logout, login, user } = useAuthContext();
 
+
+ const [results, setResults] = useState([])
+
+ useEffect(() => {
+   console.log(user)
+   // call on api to get Kitties
+   // setResults with data
+   API.getUser(user.id)
+   .then(response => {
+     setResults(response.data)
+     console.log(response.data)
+   })
+ }, [])
+
 const deleteKitty=(kittyId)=>{
   API.deleteKitty(kittyId)
   .then(response => {
     console.log(response)
     if (response.data === 1) {
       console.log("in here")
-      const newKittyArray = user.kitty_owner.filter(kitty => kitty.id !== kittyId)
-      API.getUser(user.id)
-      .then(response => {
-        login(response.data)
-      })
+      const newKittyArray = results.kitty_owner.filter(kitty => kitty.id !== kittyId)
+        setResults({...results, kitty_owner: newKittyArray})
     }
   })
 }
@@ -49,9 +60,9 @@ const deleteKitty=(kittyId)=>{
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>
             <h2 className="HomeTitle">My Posted Kitties</h2>
-            {user.kitty_owner?.length > 0 ? (
+              {results.kitty_owner?.length > 0 ? (
               <ul className="list-group search-results">
-                {user.kitty_owner?.map(result => (
+                {results.kitty_owner?.map(result => (
               <li key={result.id} className="list-group-item">
                   <KittyDeleteCard cat={result} deleteKitty={deleteKitty}/>
                   </li>
