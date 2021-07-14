@@ -11,7 +11,7 @@ const { user, setFavoriteKitties } = useAuthContext();
 const [ isFavorite, setIsFavorite ] = useState(false)
 
 useEffect(() => {
- const isFavoriteKitty = user.favoriteKitties.some(kitty => kittyId === kitty.id);
+ const isFavoriteKitty = user?.favoriteKitties?.some(kitty => kittyId === kitty.id);
  setIsFavorite( isFavoriteKitty );
 }, [ user ])
 
