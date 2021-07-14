@@ -90,7 +90,7 @@ const deleteKitty=(kittyId)=>{
             ))}
             </ul>
         </div>
-      ) : <h2 className="ResultsText">No favorite kitties to display</h2>
+      ) : <h2 className="ResultsText">No favorite kitties to display!</h2>
         }
     </Grid>
   </Grid>
