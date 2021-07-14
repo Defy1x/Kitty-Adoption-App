@@ -43,7 +43,7 @@ Must not expose sensitive API key information on the server
 Please add your user name and password to the config file. You will need an API key from rawg.io in the service layer to perform searches.Also install npm packages needed to run this program.
 
 ## Deployed Heroku Link
-coming soon
+https://limitless-stream-57372.herokuapp.com/
 
 ## Youtube Demo
 coming soon
