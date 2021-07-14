@@ -17,8 +17,6 @@ const UserProfile = () => {
   const { logout, user } = useAuthContext();
 
   const [results, setResults] = useState([])
-  const [addFavorites, setAddFavorites] = useState(false);
-  const [removeFavorites, setRemoveFavorites] = useState(false);
 
   useEffect(() => {
     console.log(user)
@@ -69,7 +67,7 @@ const deleteKitty=(kittyId)=>{
                   </li>
                 ))}
               </ul>
-            ): <h3 className="ResultsText">No kitties to display! Post some kitties!</h3>
+            ): <h3 className="ResultsText">No kitties to display! Post some kitties for adoption!</h3>
           }
 
         <h2 className="HomeTitle">My Favorite Kitties</h2>

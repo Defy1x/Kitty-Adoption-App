@@ -6,14 +6,12 @@ const reducer = ( state, { type, payload } ) => {
   switch ( type ) {
 		case LOGIN:
 			return {
-				...state,
 				user: payload
-			}	;
+			};
 		case LOGOUT:
-			return {
-				...state,
-				user: null
-			}
+			return {user: null}
+
+
     case SET_FAVORITE_KITTIES:
       return {
         ...state,

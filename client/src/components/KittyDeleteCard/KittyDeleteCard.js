@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import "./style.css";
 
-const KittyDeleteCard = ({cat, setAddFavorites, setRemoveFavorites, deleteKitty}) => {
+const KittyDeleteCard = ({cat, deleteKitty}) => {
   return(
     <Container maxWidth="lg" className="KittyContainer">
       <Grid container spacing={5}>
@@ -32,7 +32,7 @@ const KittyDeleteCard = ({cat, setAddFavorites, setRemoveFavorites, deleteKitty}
             <h4 className="KittyCardDesc">Good with Kids: {cat.kittyKids}</h4>
           </Grid>
           <Grid item xs={12} sm={2}>
-            <Heart kittyId = {cat.id} setAddFavorites={setAddFavorites} setRemoveFavorites={setRemoveFavorites} />
+            <Heart kittyId = {cat.id}/>
           </Grid>
         </Grid>
         <Grid container spacing={0}

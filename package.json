@@ -20,7 +20,9 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.9"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Defy1x/Kitty-Adoption-App.git"
