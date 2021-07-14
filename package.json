@@ -21,10 +21,12 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "if-env": "^1.0.4",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.4"
   },
   "devDependencies": {
+    "concurrently": "^6.2.0",
     "redux-devtools-extension": "^2.13.9"
   },
   "repository": {
