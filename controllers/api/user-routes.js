@@ -44,8 +44,8 @@ router.delete("/:id/favorite/:kittyId", async (req, res) => {
       await user.removeFavoriteKitty(kittyId);
       res.status(200).end();
     } catch (err) {
-    console.log(err)
-        res.status(500).json(err);
+      console.log(err)
+      res.status(500).json(err);
     }
 });
 

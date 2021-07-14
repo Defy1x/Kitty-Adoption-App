@@ -12,16 +12,9 @@ import Nav from '../components/Nav/Nav';
 
 
 const KittyProfile = () => {
-  const { logout, user, login } = useAuthContext();
-
-
   const { id } = useParams()
   const history = useHistory()
-
-
-  const [addFavorites, setAddFavorites] = useState(false);
-  const [removeFavorites, setRemoveFavorites] = useState(false);
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState({})
 
   useEffect(() => {
     // call on api to get Kitties
@@ -30,30 +23,7 @@ const KittyProfile = () => {
     .then(response => {
       setResults(response.data)
     })
-
-    API.getUser()
-    .then(response => {
-      login(response.data)
-    })
-
-    if(addFavorites){
-      setAddFavorites(false);
-    }
-
-    if(removeFavorites){
-      setRemoveFavorites(false);
-    }
-  }, [addFavorites, removeFavorites])
-
-  const handleLogout = async () => {
-    try {
-      await API.signOutUser();
-
-      logout();
-    } catch (err) {
-      console.log( err);
-    }
-  }
+  }, [])
 
 return (
   <React.Fragment>

@@ -16,8 +16,16 @@ import Button from '@material-ui/core/Button';
 const UserProfile = () => {
   const { logout, login, user } = useAuthContext();
 
-
  const [results, setResults] = useState([])
+
+ const handleLogout = async () => {
+   try {
+     await API.signOutUser();
+     logout();
+   } catch( err ) {
+     //handle
+   }
+ }
 
  useEffect(() => {
    console.log(user)
@@ -55,7 +63,7 @@ const deleteKitty=(kittyId)=>{
             <Nav/>
           </Grid>
         </Grid>
-        <h2 className="UserTitle"><button className="logOutBtn" onClick={ logout }>Logout of {user.username}'s Account</button></h2>
+        <h2 className="UserTitle"><button className="logOutBtn" onClick={ handleLogout }>Logout of {user.username}'s Account</button></h2>
 
         <Grid container spacing={0}>
           <Grid item xs={12} sm={12}>

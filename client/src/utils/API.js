@@ -22,15 +22,15 @@ export default {
   },
 
   addFavoriteKitty: async(userId, kittyId) =>{
-    return axios.put(`api/user/${userId}/favorite/${kittyId}`);
+    return axios.put(`/api/user/${userId}/favorite/${kittyId}`);
   },
 
   removeFavoriteKitty: async(userId, kittyId)=>{
-    return axios.delete(`api/user/${userId}/favorite/${kittyId}`);
+    return axios.delete(`/api/user/${userId}/favorite/${kittyId}`);
   },
 
   getFavoriteKitties: async(id)=>{
-    return axios.get(`api/user/${id}/favorite`);
+    return axios.get(`/api/user/${id}/favorite`);
   },
 
   getUsers: async()=> {
